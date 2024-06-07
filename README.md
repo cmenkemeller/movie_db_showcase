@@ -39,3 +39,8 @@ Please use the API exposed on: [The Movie Database API](https://developers.themo
 Repository must contain:
 - A Readme file, with details of the implementation, assumptions made and scripts or a step by step guide to run the application in either iOS or Android. If needed, specify the target platform.
 - Source Code
+
+# Steps
+1. Create new Flutter Project
+2. Determine end points
+    -Using Swagger for api documentation
