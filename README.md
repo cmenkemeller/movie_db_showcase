@@ -43,4 +43,8 @@ Repository must contain:
 # Steps
 1. Create new Flutter Project
 2. Determine end points
-    -Using Swagger for api documentation
+    - Obtain API Key from themoviedb
+    - Using Swagger for API documentation
+3. Create data classes based on responses
+    - Using Freezed for to/from json and equality generation
+
