@@ -59,4 +59,7 @@ Repository must contain:
 4. Create api client using Dio, Retrofit
     - Provide client to project using flutter_bloc package's RepositoryProvider
     - Use environmental variables for api key access, passed in at runtime
+5. Add Routing
+    - Using go_router package
+
 
