@@ -226,17 +226,17 @@ Results _$ResultsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Results {
-  bool? get adult => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  bool get adult => throw _privateConstructorUsedError;
   String? get backdropPath => throw _privateConstructorUsedError;
   List<int>? get genreIds => throw _privateConstructorUsedError;
-  int? get id => throw _privateConstructorUsedError;
   String? get originalLanguage => throw _privateConstructorUsedError;
   String? get originalTitle => throw _privateConstructorUsedError;
   String? get overview => throw _privateConstructorUsedError;
   double? get popularity => throw _privateConstructorUsedError;
   String? get posterPath => throw _privateConstructorUsedError;
   String? get releaseDate => throw _privateConstructorUsedError;
-  String? get title => throw _privateConstructorUsedError;
   bool? get video => throw _privateConstructorUsedError;
   double? get voteAverage => throw _privateConstructorUsedError;
   int? get voteCount => throw _privateConstructorUsedError;
@@ -252,17 +252,17 @@ abstract class $ResultsCopyWith<$Res> {
       _$ResultsCopyWithImpl<$Res, Results>;
   @useResult
   $Res call(
-      {bool? adult,
+      {int id,
+      String title,
+      bool adult,
       String? backdropPath,
       List<int>? genreIds,
-      int? id,
       String? originalLanguage,
       String? originalTitle,
       String? overview,
       double? popularity,
       String? posterPath,
       String? releaseDate,
-      String? title,
       bool? video,
       double? voteAverage,
       int? voteCount});
@@ -281,26 +281,34 @@ class _$ResultsCopyWithImpl<$Res, $Val extends Results>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? adult = freezed,
+    Object? id = null,
+    Object? title = null,
+    Object? adult = null,
     Object? backdropPath = freezed,
     Object? genreIds = freezed,
-    Object? id = freezed,
     Object? originalLanguage = freezed,
     Object? originalTitle = freezed,
     Object? overview = freezed,
     Object? popularity = freezed,
     Object? posterPath = freezed,
     Object? releaseDate = freezed,
-    Object? title = freezed,
     Object? video = freezed,
     Object? voteAverage = freezed,
     Object? voteCount = freezed,
   }) {
     return _then(_value.copyWith(
-      adult: freezed == adult
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      adult: null == adult
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       backdropPath: freezed == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
@@ -309,10 +317,6 @@ class _$ResultsCopyWithImpl<$Res, $Val extends Results>
           ? _value.genreIds
           : genreIds // ignore: cast_nullable_to_non_nullable
               as List<int>?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
       originalLanguage: freezed == originalLanguage
           ? _value.originalLanguage
           : originalLanguage // ignore: cast_nullable_to_non_nullable
@@ -336,10 +340,6 @@ class _$ResultsCopyWithImpl<$Res, $Val extends Results>
       releaseDate: freezed == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
               as String?,
       video: freezed == video
           ? _value.video
@@ -365,17 +365,17 @@ abstract class _$$ResultsImplCopyWith<$Res> implements $ResultsCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {bool? adult,
+      {int id,
+      String title,
+      bool adult,
       String? backdropPath,
       List<int>? genreIds,
-      int? id,
       String? originalLanguage,
       String? originalTitle,
       String? overview,
       double? popularity,
       String? posterPath,
       String? releaseDate,
-      String? title,
       bool? video,
       double? voteAverage,
       int? voteCount});
@@ -392,26 +392,34 @@ class __$$ResultsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? adult = freezed,
+    Object? id = null,
+    Object? title = null,
+    Object? adult = null,
     Object? backdropPath = freezed,
     Object? genreIds = freezed,
-    Object? id = freezed,
     Object? originalLanguage = freezed,
     Object? originalTitle = freezed,
     Object? overview = freezed,
     Object? popularity = freezed,
     Object? posterPath = freezed,
     Object? releaseDate = freezed,
-    Object? title = freezed,
     Object? video = freezed,
     Object? voteAverage = freezed,
     Object? voteCount = freezed,
   }) {
     return _then(_$ResultsImpl(
-      adult: freezed == adult
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      adult: null == adult
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       backdropPath: freezed == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
@@ -420,10 +428,6 @@ class __$$ResultsImplCopyWithImpl<$Res>
           ? _value._genreIds
           : genreIds // ignore: cast_nullable_to_non_nullable
               as List<int>?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
       originalLanguage: freezed == originalLanguage
           ? _value.originalLanguage
           : originalLanguage // ignore: cast_nullable_to_non_nullable
@@ -448,10 +452,6 @@ class __$$ResultsImplCopyWithImpl<$Res>
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
       video: freezed == video
           ? _value.video
           : video // ignore: cast_nullable_to_non_nullable
@@ -472,17 +472,17 @@ class __$$ResultsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ResultsImpl implements _Results {
   _$ResultsImpl(
-      {this.adult,
+      {required this.id,
+      required this.title,
+      this.adult = false,
       this.backdropPath,
       final List<int>? genreIds,
-      this.id,
       this.originalLanguage,
       this.originalTitle,
       this.overview,
       this.popularity,
       this.posterPath,
       this.releaseDate,
-      this.title,
       this.video,
       this.voteAverage,
       this.voteCount})
@@ -492,7 +492,12 @@ class _$ResultsImpl implements _Results {
       _$$ResultsImplFromJson(json);
 
   @override
-  final bool? adult;
+  final int id;
+  @override
+  final String title;
+  @override
+  @JsonKey()
+  final bool adult;
   @override
   final String? backdropPath;
   final List<int>? _genreIds;
@@ -506,8 +511,6 @@ class _$ResultsImpl implements _Results {
   }
 
   @override
-  final int? id;
-  @override
   final String? originalLanguage;
   @override
   final String? originalTitle;
@@ -520,8 +523,6 @@ class _$ResultsImpl implements _Results {
   @override
   final String? releaseDate;
   @override
-  final String? title;
-  @override
   final bool? video;
   @override
   final double? voteAverage;
@@ -530,7 +531,7 @@ class _$ResultsImpl implements _Results {
 
   @override
   String toString() {
-    return 'Results(adult: $adult, backdropPath: $backdropPath, genreIds: $genreIds, id: $id, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, title: $title, video: $video, voteAverage: $voteAverage, voteCount: $voteCount)';
+    return 'Results(id: $id, title: $title, adult: $adult, backdropPath: $backdropPath, genreIds: $genreIds, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, video: $video, voteAverage: $voteAverage, voteCount: $voteCount)';
   }
 
   @override
@@ -538,11 +539,12 @@ class _$ResultsImpl implements _Results {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ResultsImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
             (identical(other.adult, adult) || other.adult == adult) &&
             (identical(other.backdropPath, backdropPath) ||
                 other.backdropPath == backdropPath) &&
             const DeepCollectionEquality().equals(other._genreIds, _genreIds) &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.originalLanguage, originalLanguage) ||
                 other.originalLanguage == originalLanguage) &&
             (identical(other.originalTitle, originalTitle) ||
@@ -555,7 +557,6 @@ class _$ResultsImpl implements _Results {
                 other.posterPath == posterPath) &&
             (identical(other.releaseDate, releaseDate) ||
                 other.releaseDate == releaseDate) &&
-            (identical(other.title, title) || other.title == title) &&
             (identical(other.video, video) || other.video == video) &&
             (identical(other.voteAverage, voteAverage) ||
                 other.voteAverage == voteAverage) &&
@@ -567,17 +568,17 @@ class _$ResultsImpl implements _Results {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      title,
       adult,
       backdropPath,
       const DeepCollectionEquality().hash(_genreIds),
-      id,
       originalLanguage,
       originalTitle,
       overview,
       popularity,
       posterPath,
       releaseDate,
-      title,
       video,
       voteAverage,
       voteCount);
@@ -598,17 +599,17 @@ class _$ResultsImpl implements _Results {
 
 abstract class _Results implements Results {
   factory _Results(
-      {final bool? adult,
+      {required final int id,
+      required final String title,
+      final bool adult,
       final String? backdropPath,
       final List<int>? genreIds,
-      final int? id,
       final String? originalLanguage,
       final String? originalTitle,
       final String? overview,
       final double? popularity,
       final String? posterPath,
       final String? releaseDate,
-      final String? title,
       final bool? video,
       final double? voteAverage,
       final int? voteCount}) = _$ResultsImpl;
@@ -616,13 +617,15 @@ abstract class _Results implements Results {
   factory _Results.fromJson(Map<String, dynamic> json) = _$ResultsImpl.fromJson;
 
   @override
-  bool? get adult;
+  int get id;
+  @override
+  String get title;
+  @override
+  bool get adult;
   @override
   String? get backdropPath;
   @override
   List<int>? get genreIds;
-  @override
-  int? get id;
   @override
   String? get originalLanguage;
   @override
@@ -635,8 +638,6 @@ abstract class _Results implements Results {
   String? get posterPath;
   @override
   String? get releaseDate;
-  @override
-  String? get title;
   @override
   bool? get video;
   @override

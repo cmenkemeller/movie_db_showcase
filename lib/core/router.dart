@@ -1,5 +1,5 @@
 import 'package:equifax_movie_db/features/details/ui/details_screen.dart';
-import 'package:equifax_movie_db/features/home/ui/home_screen.dart';
+import 'package:equifax_movie_db/features/home/ui/home_feature.dart';
 import 'package:equifax_movie_db/features/search/ui/search_results_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -9,7 +9,7 @@ class MDBRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => const HomeScreen(),
+        builder: (context, state) => const HomeFeature(),
       ),
       GoRoute(
         path: '/details/:id',

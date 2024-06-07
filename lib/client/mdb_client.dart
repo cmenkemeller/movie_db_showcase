@@ -4,14 +4,12 @@ import 'package:dio/dio.dart';
 
 part 'mdb_client.g.dart';
 
-@RestApi(baseUrl: "https://api.themoviedb.org/3")
+@RestApi(baseUrl: "https://api.themoviedb.org/3/")
 abstract class MDBClient {
   factory MDBClient(Dio dio, {String baseUrl}) = _MDBClient;
 
   @GET(MDBEndPoint.discoverMovies)
-  Future<HttpResponse<ResultList>> discoverMovies(
-    @DioOptions() Options options,
-  );
+  Future<HttpResponse<ResultList>> discoverMovies();
 }
 
 class MDBPath {
