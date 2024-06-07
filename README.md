@@ -1,5 +1,14 @@
 # Equifax Movie DB
 
+## Running instructions
+1. Create file 'api-keys.json' in project root
+- Add following code with your own API key
+    ```
+    {
+        "TMDB_KEY": "[YOUR API KEY HERE]"
+    }
+    ```
+
 ## Credits
 This project was created from scratch by Cardin Menkemeller.
 
@@ -47,4 +56,7 @@ Repository must contain:
     - Using Swagger for API documentation
 3. Create data classes based on responses
     - Using Freezed for to/from json and equality generation
+4. Create api client using Dio, Retrofit
+    - Provide client to project using flutter_bloc package's RepositoryProvider
+    - Use environmental variables for api key access, passed in at runtime
 
