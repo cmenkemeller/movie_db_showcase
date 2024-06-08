@@ -21,13 +21,13 @@ class _MDBClient implements MDBClient {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<ResultList>> discoverMovies() async {
+  Future<HttpResponse<MovieList>> discoverMovies() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<ResultList>>(Options(
+        _setStreamType<HttpResponse<MovieList>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -43,19 +43,19 @@ class _MDBClient implements MDBClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = ResultList.fromJson(_result.data!);
+    final value = MovieList.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }
 
   @override
-  Future<HttpResponse<Results>> getDetails(String movieId) async {
+  Future<HttpResponse<Movie>> getDetails(String movieId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<Results>>(Options(
+        _setStreamType<HttpResponse<Movie>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -71,7 +71,7 @@ class _MDBClient implements MDBClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = Results.fromJson(_result.data!);
+    final value = Movie.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }

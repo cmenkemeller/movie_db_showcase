@@ -15,6 +15,7 @@ class MovieDatabaseApp extends StatelessWidget {
 
     final baseOptions = BaseOptions(queryParameters: {'api_key': apiKey});
     Dio dio = Dio(baseOptions);
+
     dio.interceptors.add(PrettyDioLogger());
     dio.interceptors.add(MDBCache.instance.interceptor());
 

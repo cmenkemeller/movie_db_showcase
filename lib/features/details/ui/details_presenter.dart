@@ -14,13 +14,13 @@ class DetailsPresenter extends StatelessWidget {
       ),
       body: BlocBuilder<DetailsCubit, DetailsState>(
         builder: (context, state) {
-          if (state.isLoading || state.result == null) {
+          if (state.isLoading || state.movie == null) {
             return const Center(
               child: CircularProgressIndicator(),
             );
           }
           return DetailsScreen(
-            result: state.result!,
+            movie: state.movie!,
           );
         },
       ),

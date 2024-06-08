@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$DetailsState {
   bool get isLoading => throw _privateConstructorUsedError;
-  Results? get result => throw _privateConstructorUsedError;
+  Movie? get movie => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DetailsStateCopyWith<DetailsState> get copyWith =>
@@ -30,9 +30,9 @@ abstract class $DetailsStateCopyWith<$Res> {
           DetailsState value, $Res Function(DetailsState) then) =
       _$DetailsStateCopyWithImpl<$Res, DetailsState>;
   @useResult
-  $Res call({bool isLoading, Results? result});
+  $Res call({bool isLoading, Movie? movie});
 
-  $ResultsCopyWith<$Res>? get result;
+  $MovieCopyWith<$Res>? get movie;
 }
 
 /// @nodoc
@@ -49,29 +49,29 @@ class _$DetailsStateCopyWithImpl<$Res, $Val extends DetailsState>
   @override
   $Res call({
     Object? isLoading = null,
-    Object? result = freezed,
+    Object? movie = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      result: freezed == result
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
-              as Results?,
+      movie: freezed == movie
+          ? _value.movie
+          : movie // ignore: cast_nullable_to_non_nullable
+              as Movie?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ResultsCopyWith<$Res>? get result {
-    if (_value.result == null) {
+  $MovieCopyWith<$Res>? get movie {
+    if (_value.movie == null) {
       return null;
     }
 
-    return $ResultsCopyWith<$Res>(_value.result!, (value) {
-      return _then(_value.copyWith(result: value) as $Val);
+    return $MovieCopyWith<$Res>(_value.movie!, (value) {
+      return _then(_value.copyWith(movie: value) as $Val);
     });
   }
 }
@@ -84,10 +84,10 @@ abstract class _$$DetailsStateImplCopyWith<$Res>
       __$$DetailsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, Results? result});
+  $Res call({bool isLoading, Movie? movie});
 
   @override
-  $ResultsCopyWith<$Res>? get result;
+  $MovieCopyWith<$Res>? get movie;
 }
 
 /// @nodoc
@@ -102,17 +102,17 @@ class __$$DetailsStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = null,
-    Object? result = freezed,
+    Object? movie = freezed,
   }) {
     return _then(_$DetailsStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      result: freezed == result
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
-              as Results?,
+      movie: freezed == movie
+          ? _value.movie
+          : movie // ignore: cast_nullable_to_non_nullable
+              as Movie?,
     ));
   }
 }
@@ -120,16 +120,16 @@ class __$$DetailsStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DetailsStateImpl implements _DetailsState {
-  const _$DetailsStateImpl({required this.isLoading, this.result});
+  const _$DetailsStateImpl({required this.isLoading, this.movie});
 
   @override
   final bool isLoading;
   @override
-  final Results? result;
+  final Movie? movie;
 
   @override
   String toString() {
-    return 'DetailsState(isLoading: $isLoading, result: $result)';
+    return 'DetailsState(isLoading: $isLoading, movie: $movie)';
   }
 
   @override
@@ -139,11 +139,11 @@ class _$DetailsStateImpl implements _DetailsState {
             other is _$DetailsStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            (identical(other.result, result) || other.result == result));
+            (identical(other.movie, movie) || other.movie == movie));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, result);
+  int get hashCode => Object.hash(runtimeType, isLoading, movie);
 
   @JsonKey(ignore: true)
   @override
@@ -154,13 +154,12 @@ class _$DetailsStateImpl implements _DetailsState {
 
 abstract class _DetailsState implements DetailsState {
   const factory _DetailsState(
-      {required final bool isLoading,
-      final Results? result}) = _$DetailsStateImpl;
+      {required final bool isLoading, final Movie? movie}) = _$DetailsStateImpl;
 
   @override
   bool get isLoading;
   @override
-  Results? get result;
+  Movie? get movie;
   @override
   @JsonKey(ignore: true)
   _$$DetailsStateImplCopyWith<_$DetailsStateImpl> get copyWith =>

@@ -4,7 +4,7 @@ part of 'details_cubit.dart';
 class DetailsState with _$DetailsState {
   const factory DetailsState({
     required bool isLoading,
-    Results? result,
+    Movie? movie,
   }) = _DetailsState;
 
   factory DetailsState.loading() => const DetailsState(

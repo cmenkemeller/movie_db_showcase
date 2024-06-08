@@ -11,7 +11,7 @@ class HomeCubit extends Cubit<HomeState> {
     final result = await client?.discoverMovies();
     final movies = result?.data.results;
     if (movies != null) {
-      emit(HomeState(resultList: movies, isLoading: false));
+      emit(HomeState(movieList: movies, isLoading: false));
     }
   }
 }

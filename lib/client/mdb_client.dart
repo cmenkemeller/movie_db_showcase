@@ -1,4 +1,5 @@
-import 'package:equifax_movie_db/models/results_model.dart';
+import 'package:equifax_movie_db/models/movie.dart';
+import 'package:equifax_movie_db/models/movie_list.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 
@@ -9,10 +10,10 @@ abstract class MDBClient {
   factory MDBClient(Dio dio, {String baseUrl}) = _MDBClient;
 
   @GET(MDBEndPoint.discoverMovies)
-  Future<HttpResponse<ResultList>> discoverMovies();
+  Future<HttpResponse<MovieList>> discoverMovies();
 
   @GET(MDBEndPoint.movieDetails)
-  Future<HttpResponse<Results>> getDetails(
+  Future<HttpResponse<Movie>> getDetails(
     @Path(MDBPath.movieId) String movieId,
   );
 }

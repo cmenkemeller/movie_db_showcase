@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomeState {
   bool get isLoading => throw _privateConstructorUsedError;
-  List<Results> get resultList => throw _privateConstructorUsedError;
+  List<Movie> get movieList => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -29,7 +29,7 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({bool isLoading, List<Results> resultList});
+  $Res call({bool isLoading, List<Movie> movieList});
 }
 
 /// @nodoc
@@ -46,17 +46,17 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @override
   $Res call({
     Object? isLoading = null,
-    Object? resultList = null,
+    Object? movieList = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      resultList: null == resultList
-          ? _value.resultList
-          : resultList // ignore: cast_nullable_to_non_nullable
-              as List<Results>,
+      movieList: null == movieList
+          ? _value.movieList
+          : movieList // ignore: cast_nullable_to_non_nullable
+              as List<Movie>,
     ) as $Val);
   }
 }
@@ -69,7 +69,7 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, List<Results> resultList});
+  $Res call({bool isLoading, List<Movie> movieList});
 }
 
 /// @nodoc
@@ -84,17 +84,17 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = null,
-    Object? resultList = null,
+    Object? movieList = null,
   }) {
     return _then(_$HomeStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      resultList: null == resultList
-          ? _value._resultList
-          : resultList // ignore: cast_nullable_to_non_nullable
-              as List<Results>,
+      movieList: null == movieList
+          ? _value._movieList
+          : movieList // ignore: cast_nullable_to_non_nullable
+              as List<Movie>,
     ));
   }
 }
@@ -103,23 +103,23 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 
 class _$HomeStateImpl implements _HomeState {
   const _$HomeStateImpl(
-      {required this.isLoading, final List<Results> resultList = const []})
-      : _resultList = resultList;
+      {required this.isLoading, final List<Movie> movieList = const []})
+      : _movieList = movieList;
 
   @override
   final bool isLoading;
-  final List<Results> _resultList;
+  final List<Movie> _movieList;
   @override
   @JsonKey()
-  List<Results> get resultList {
-    if (_resultList is EqualUnmodifiableListView) return _resultList;
+  List<Movie> get movieList {
+    if (_movieList is EqualUnmodifiableListView) return _movieList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_resultList);
+    return EqualUnmodifiableListView(_movieList);
   }
 
   @override
   String toString() {
-    return 'HomeState(isLoading: $isLoading, resultList: $resultList)';
+    return 'HomeState(isLoading: $isLoading, movieList: $movieList)';
   }
 
   @override
@@ -130,12 +130,12 @@ class _$HomeStateImpl implements _HomeState {
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             const DeepCollectionEquality()
-                .equals(other._resultList, _resultList));
+                .equals(other._movieList, _movieList));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, isLoading, const DeepCollectionEquality().hash(_resultList));
+      runtimeType, isLoading, const DeepCollectionEquality().hash(_movieList));
 
   @JsonKey(ignore: true)
   @override
@@ -147,12 +147,12 @@ class _$HomeStateImpl implements _HomeState {
 abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {required final bool isLoading,
-      final List<Results> resultList}) = _$HomeStateImpl;
+      final List<Movie> movieList}) = _$HomeStateImpl;
 
   @override
   bool get isLoading;
   @override
-  List<Results> get resultList;
+  List<Movie> get movieList;
   @override
   @JsonKey(ignore: true)
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>

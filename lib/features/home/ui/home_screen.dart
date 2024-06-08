@@ -1,12 +1,12 @@
 import 'package:equifax_movie_db/core/mdb_theme.dart';
 import 'package:equifax_movie_db/features/details/ui/details_feature.dart';
 import 'package:equifax_movie_db/features/home/ui/home_feature.dart';
-import 'package:equifax_movie_db/models/results_model.dart';
+import 'package:equifax_movie_db/models/movie.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  final List<Results> resultList;
-  const HomeScreen({required this.resultList, super.key});
+  final List<Movie> movieList;
+  const HomeScreen({required this.movieList, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,12 +47,12 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         SliverList.builder(
-          itemCount: resultList.length,
+          itemCount: movieList.length,
           itemBuilder: (context, index) {
-            final movie = resultList[index];
+            final movie = movieList[index];
             return ListTile(
               title: Text(movie.title),
-              subtitle: movie.overview != null ? Text(movie.overview!) : null,
+              subtitle: Text(movie.overview),
               onTap: () =>
                   DetailsFeature(id: movie.id.toString()).push(context),
             );

@@ -1,12 +1,12 @@
-import 'package:equifax_movie_db/models/results_model.dart';
+import 'package:equifax_movie_db/models/movie.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
-  final Results result;
-  const DetailsScreen({required this.result, super.key});
+  final Movie movie;
+  const DetailsScreen({required this.movie, super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Text(result.title);
+    return Text(movie.title);
   }
 }

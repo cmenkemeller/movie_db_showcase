@@ -16,7 +16,7 @@ class HomePresenter extends StatelessWidget {
             child: CircularProgressIndicator(),
           );
         }
-        return HomeScreen(resultList: state.resultList);
+        return HomeScreen(movieList: state.movieList);
       }),
     );
   }

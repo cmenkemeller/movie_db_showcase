@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'results_model.dart';
+part of 'movie.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,218 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ResultList _$ResultListFromJson(Map<String, dynamic> json) {
-  return _ResultList.fromJson(json);
+Movie _$MovieFromJson(Map<String, dynamic> json) {
+  return _Movie.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ResultList {
-  int? get page => throw _privateConstructorUsedError;
-  List<Results>? get results => throw _privateConstructorUsedError;
-  int? get totalPages => throw _privateConstructorUsedError;
-  int? get totalResults => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ResultListCopyWith<ResultList> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ResultListCopyWith<$Res> {
-  factory $ResultListCopyWith(
-          ResultList value, $Res Function(ResultList) then) =
-      _$ResultListCopyWithImpl<$Res, ResultList>;
-  @useResult
-  $Res call(
-      {int? page, List<Results>? results, int? totalPages, int? totalResults});
-}
-
-/// @nodoc
-class _$ResultListCopyWithImpl<$Res, $Val extends ResultList>
-    implements $ResultListCopyWith<$Res> {
-  _$ResultListCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? page = freezed,
-    Object? results = freezed,
-    Object? totalPages = freezed,
-    Object? totalResults = freezed,
-  }) {
-    return _then(_value.copyWith(
-      page: freezed == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int?,
-      results: freezed == results
-          ? _value.results
-          : results // ignore: cast_nullable_to_non_nullable
-              as List<Results>?,
-      totalPages: freezed == totalPages
-          ? _value.totalPages
-          : totalPages // ignore: cast_nullable_to_non_nullable
-              as int?,
-      totalResults: freezed == totalResults
-          ? _value.totalResults
-          : totalResults // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ResultListImplCopyWith<$Res>
-    implements $ResultListCopyWith<$Res> {
-  factory _$$ResultListImplCopyWith(
-          _$ResultListImpl value, $Res Function(_$ResultListImpl) then) =
-      __$$ResultListImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {int? page, List<Results>? results, int? totalPages, int? totalResults});
-}
-
-/// @nodoc
-class __$$ResultListImplCopyWithImpl<$Res>
-    extends _$ResultListCopyWithImpl<$Res, _$ResultListImpl>
-    implements _$$ResultListImplCopyWith<$Res> {
-  __$$ResultListImplCopyWithImpl(
-      _$ResultListImpl _value, $Res Function(_$ResultListImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? page = freezed,
-    Object? results = freezed,
-    Object? totalPages = freezed,
-    Object? totalResults = freezed,
-  }) {
-    return _then(_$ResultListImpl(
-      page: freezed == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int?,
-      results: freezed == results
-          ? _value._results
-          : results // ignore: cast_nullable_to_non_nullable
-              as List<Results>?,
-      totalPages: freezed == totalPages
-          ? _value.totalPages
-          : totalPages // ignore: cast_nullable_to_non_nullable
-              as int?,
-      totalResults: freezed == totalResults
-          ? _value.totalResults
-          : totalResults // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ResultListImpl implements _ResultList {
-  _$ResultListImpl(
-      {this.page,
-      final List<Results>? results,
-      this.totalPages,
-      this.totalResults})
-      : _results = results;
-
-  factory _$ResultListImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ResultListImplFromJson(json);
-
-  @override
-  final int? page;
-  final List<Results>? _results;
-  @override
-  List<Results>? get results {
-    final value = _results;
-    if (value == null) return null;
-    if (_results is EqualUnmodifiableListView) return _results;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  @override
-  final int? totalPages;
-  @override
-  final int? totalResults;
-
-  @override
-  String toString() {
-    return 'ResultList(page: $page, results: $results, totalPages: $totalPages, totalResults: $totalResults)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ResultListImpl &&
-            (identical(other.page, page) || other.page == page) &&
-            const DeepCollectionEquality().equals(other._results, _results) &&
-            (identical(other.totalPages, totalPages) ||
-                other.totalPages == totalPages) &&
-            (identical(other.totalResults, totalResults) ||
-                other.totalResults == totalResults));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, page,
-      const DeepCollectionEquality().hash(_results), totalPages, totalResults);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ResultListImplCopyWith<_$ResultListImpl> get copyWith =>
-      __$$ResultListImplCopyWithImpl<_$ResultListImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ResultListImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ResultList implements ResultList {
-  factory _ResultList(
-      {final int? page,
-      final List<Results>? results,
-      final int? totalPages,
-      final int? totalResults}) = _$ResultListImpl;
-
-  factory _ResultList.fromJson(Map<String, dynamic> json) =
-      _$ResultListImpl.fromJson;
-
-  @override
-  int? get page;
-  @override
-  List<Results>? get results;
-  @override
-  int? get totalPages;
-  @override
-  int? get totalResults;
-  @override
-  @JsonKey(ignore: true)
-  _$$ResultListImplCopyWith<_$ResultListImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Results _$ResultsFromJson(Map<String, dynamic> json) {
-  return _Results.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Results {
+mixin _$Movie {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   bool get adult => throw _privateConstructorUsedError;
@@ -233,7 +27,7 @@ mixin _$Results {
   List<int>? get genreIds => throw _privateConstructorUsedError;
   String? get originalLanguage => throw _privateConstructorUsedError;
   String? get originalTitle => throw _privateConstructorUsedError;
-  String? get overview => throw _privateConstructorUsedError;
+  dynamic get overview => throw _privateConstructorUsedError;
   double? get popularity => throw _privateConstructorUsedError;
   String? get posterPath => throw _privateConstructorUsedError;
   String? get releaseDate => throw _privateConstructorUsedError;
@@ -243,13 +37,13 @@ mixin _$Results {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ResultsCopyWith<Results> get copyWith => throw _privateConstructorUsedError;
+  $MovieCopyWith<Movie> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ResultsCopyWith<$Res> {
-  factory $ResultsCopyWith(Results value, $Res Function(Results) then) =
-      _$ResultsCopyWithImpl<$Res, Results>;
+abstract class $MovieCopyWith<$Res> {
+  factory $MovieCopyWith(Movie value, $Res Function(Movie) then) =
+      _$MovieCopyWithImpl<$Res, Movie>;
   @useResult
   $Res call(
       {int id,
@@ -259,7 +53,7 @@ abstract class $ResultsCopyWith<$Res> {
       List<int>? genreIds,
       String? originalLanguage,
       String? originalTitle,
-      String? overview,
+      dynamic overview,
       double? popularity,
       String? posterPath,
       String? releaseDate,
@@ -269,9 +63,9 @@ abstract class $ResultsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ResultsCopyWithImpl<$Res, $Val extends Results>
-    implements $ResultsCopyWith<$Res> {
-  _$ResultsCopyWithImpl(this._value, this._then);
+class _$MovieCopyWithImpl<$Res, $Val extends Movie>
+    implements $MovieCopyWith<$Res> {
+  _$MovieCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -328,7 +122,7 @@ class _$ResultsCopyWithImpl<$Res, $Val extends Results>
       overview: freezed == overview
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       popularity: freezed == popularity
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
@@ -358,10 +152,10 @@ class _$ResultsCopyWithImpl<$Res, $Val extends Results>
 }
 
 /// @nodoc
-abstract class _$$ResultsImplCopyWith<$Res> implements $ResultsCopyWith<$Res> {
-  factory _$$ResultsImplCopyWith(
-          _$ResultsImpl value, $Res Function(_$ResultsImpl) then) =
-      __$$ResultsImplCopyWithImpl<$Res>;
+abstract class _$$MovieImplCopyWith<$Res> implements $MovieCopyWith<$Res> {
+  factory _$$MovieImplCopyWith(
+          _$MovieImpl value, $Res Function(_$MovieImpl) then) =
+      __$$MovieImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -372,7 +166,7 @@ abstract class _$$ResultsImplCopyWith<$Res> implements $ResultsCopyWith<$Res> {
       List<int>? genreIds,
       String? originalLanguage,
       String? originalTitle,
-      String? overview,
+      dynamic overview,
       double? popularity,
       String? posterPath,
       String? releaseDate,
@@ -382,11 +176,11 @@ abstract class _$$ResultsImplCopyWith<$Res> implements $ResultsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ResultsImplCopyWithImpl<$Res>
-    extends _$ResultsCopyWithImpl<$Res, _$ResultsImpl>
-    implements _$$ResultsImplCopyWith<$Res> {
-  __$$ResultsImplCopyWithImpl(
-      _$ResultsImpl _value, $Res Function(_$ResultsImpl) _then)
+class __$$MovieImplCopyWithImpl<$Res>
+    extends _$MovieCopyWithImpl<$Res, _$MovieImpl>
+    implements _$$MovieImplCopyWith<$Res> {
+  __$$MovieImplCopyWithImpl(
+      _$MovieImpl _value, $Res Function(_$MovieImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -407,7 +201,7 @@ class __$$ResultsImplCopyWithImpl<$Res>
     Object? voteAverage = freezed,
     Object? voteCount = freezed,
   }) {
-    return _then(_$ResultsImpl(
+    return _then(_$MovieImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -436,10 +230,7 @@ class __$$ResultsImplCopyWithImpl<$Res>
           ? _value.originalTitle
           : originalTitle // ignore: cast_nullable_to_non_nullable
               as String?,
-      overview: freezed == overview
-          ? _value.overview
-          : overview // ignore: cast_nullable_to_non_nullable
-              as String?,
+      overview: freezed == overview ? _value.overview! : overview,
       popularity: freezed == popularity
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
@@ -470,8 +261,8 @@ class __$$ResultsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ResultsImpl implements _Results {
-  _$ResultsImpl(
+class _$MovieImpl implements _Movie {
+  const _$MovieImpl(
       {required this.id,
       required this.title,
       this.adult = false,
@@ -479,7 +270,7 @@ class _$ResultsImpl implements _Results {
       final List<int>? genreIds,
       this.originalLanguage,
       this.originalTitle,
-      this.overview,
+      this.overview = '',
       this.popularity,
       this.posterPath,
       this.releaseDate,
@@ -488,8 +279,8 @@ class _$ResultsImpl implements _Results {
       this.voteCount})
       : _genreIds = genreIds;
 
-  factory _$ResultsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ResultsImplFromJson(json);
+  factory _$MovieImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MovieImplFromJson(json);
 
   @override
   final int id;
@@ -515,7 +306,8 @@ class _$ResultsImpl implements _Results {
   @override
   final String? originalTitle;
   @override
-  final String? overview;
+  @JsonKey()
+  final dynamic overview;
   @override
   final double? popularity;
   @override
@@ -531,14 +323,14 @@ class _$ResultsImpl implements _Results {
 
   @override
   String toString() {
-    return 'Results(id: $id, title: $title, adult: $adult, backdropPath: $backdropPath, genreIds: $genreIds, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, video: $video, voteAverage: $voteAverage, voteCount: $voteCount)';
+    return 'Movie(id: $id, title: $title, adult: $adult, backdropPath: $backdropPath, genreIds: $genreIds, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, video: $video, voteAverage: $voteAverage, voteCount: $voteCount)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ResultsImpl &&
+            other is _$MovieImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.adult, adult) || other.adult == adult) &&
@@ -549,8 +341,7 @@ class _$ResultsImpl implements _Results {
                 other.originalLanguage == originalLanguage) &&
             (identical(other.originalTitle, originalTitle) ||
                 other.originalTitle == originalTitle) &&
-            (identical(other.overview, overview) ||
-                other.overview == overview) &&
+            const DeepCollectionEquality().equals(other.overview, overview) &&
             (identical(other.popularity, popularity) ||
                 other.popularity == popularity) &&
             (identical(other.posterPath, posterPath) ||
@@ -575,7 +366,7 @@ class _$ResultsImpl implements _Results {
       const DeepCollectionEquality().hash(_genreIds),
       originalLanguage,
       originalTitle,
-      overview,
+      const DeepCollectionEquality().hash(overview),
       popularity,
       posterPath,
       releaseDate,
@@ -586,19 +377,19 @@ class _$ResultsImpl implements _Results {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ResultsImplCopyWith<_$ResultsImpl> get copyWith =>
-      __$$ResultsImplCopyWithImpl<_$ResultsImpl>(this, _$identity);
+  _$$MovieImplCopyWith<_$MovieImpl> get copyWith =>
+      __$$MovieImplCopyWithImpl<_$MovieImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ResultsImplToJson(
+    return _$$MovieImplToJson(
       this,
     );
   }
 }
 
-abstract class _Results implements Results {
-  factory _Results(
+abstract class _Movie implements Movie {
+  const factory _Movie(
       {required final int id,
       required final String title,
       final bool adult,
@@ -606,15 +397,15 @@ abstract class _Results implements Results {
       final List<int>? genreIds,
       final String? originalLanguage,
       final String? originalTitle,
-      final String? overview,
+      final dynamic overview,
       final double? popularity,
       final String? posterPath,
       final String? releaseDate,
       final bool? video,
       final double? voteAverage,
-      final int? voteCount}) = _$ResultsImpl;
+      final int? voteCount}) = _$MovieImpl;
 
-  factory _Results.fromJson(Map<String, dynamic> json) = _$ResultsImpl.fromJson;
+  factory _Movie.fromJson(Map<String, dynamic> json) = _$MovieImpl.fromJson;
 
   @override
   int get id;
@@ -631,7 +422,7 @@ abstract class _Results implements Results {
   @override
   String? get originalTitle;
   @override
-  String? get overview;
+  dynamic get overview;
   @override
   double? get popularity;
   @override
@@ -646,6 +437,6 @@ abstract class _Results implements Results {
   int? get voteCount;
   @override
   @JsonKey(ignore: true)
-  _$$ResultsImplCopyWith<_$ResultsImpl> get copyWith =>
+  _$$MovieImplCopyWith<_$MovieImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 import 'package:equifax_movie_db/client/mdb_client.dart';
-import 'package:equifax_movie_db/models/results_model.dart';
+import 'package:equifax_movie_db/models/movie.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -15,7 +15,7 @@ class DetailsCubit extends Cubit<DetailsState> {
       emit(DetailsState.loading());
       final result = await client?.getDetails(id);
       if (result != null) {
-        emit(DetailsState(result: result.data, isLoading: false));
+        emit(DetailsState(movie: result.data, isLoading: false));
       }
     }
   }
