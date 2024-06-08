@@ -22,7 +22,9 @@ MovieList _$MovieListFromJson(Map<String, dynamic> json) {
 mixin _$MovieList {
   int? get page => throw _privateConstructorUsedError;
   List<Movie> get results => throw _privateConstructorUsedError;
+  @JsonKey(name: 'total_pages')
   int? get totalPages => throw _privateConstructorUsedError;
+  @JsonKey(name: 'total_results')
   int? get totalResults => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -37,7 +39,10 @@ abstract class $MovieListCopyWith<$Res> {
       _$MovieListCopyWithImpl<$Res, MovieList>;
   @useResult
   $Res call(
-      {int? page, List<Movie> results, int? totalPages, int? totalResults});
+      {int? page,
+      List<Movie> results,
+      @JsonKey(name: 'total_pages') int? totalPages,
+      @JsonKey(name: 'total_results') int? totalResults});
 }
 
 /// @nodoc
@@ -88,7 +93,10 @@ abstract class _$$MovieListImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? page, List<Movie> results, int? totalPages, int? totalResults});
+      {int? page,
+      List<Movie> results,
+      @JsonKey(name: 'total_pages') int? totalPages,
+      @JsonKey(name: 'total_results') int? totalResults});
 }
 
 /// @nodoc
@@ -134,8 +142,8 @@ class _$MovieListImpl implements _MovieList {
   _$MovieListImpl(
       {this.page,
       final List<Movie> results = const [],
-      this.totalPages,
-      this.totalResults})
+      @JsonKey(name: 'total_pages') this.totalPages,
+      @JsonKey(name: 'total_results') this.totalResults})
       : _results = results;
 
   factory _$MovieListImpl.fromJson(Map<String, dynamic> json) =>
@@ -153,8 +161,10 @@ class _$MovieListImpl implements _MovieList {
   }
 
   @override
+  @JsonKey(name: 'total_pages')
   final int? totalPages;
   @override
+  @JsonKey(name: 'total_results')
   final int? totalResults;
 
   @override
@@ -196,10 +206,11 @@ class _$MovieListImpl implements _MovieList {
 
 abstract class _MovieList implements MovieList {
   factory _MovieList(
-      {final int? page,
-      final List<Movie> results,
-      final int? totalPages,
-      final int? totalResults}) = _$MovieListImpl;
+          {final int? page,
+          final List<Movie> results,
+          @JsonKey(name: 'total_pages') final int? totalPages,
+          @JsonKey(name: 'total_results') final int? totalResults}) =
+      _$MovieListImpl;
 
   factory _MovieList.fromJson(Map<String, dynamic> json) =
       _$MovieListImpl.fromJson;
@@ -209,8 +220,10 @@ abstract class _MovieList implements MovieList {
   @override
   List<Movie> get results;
   @override
+  @JsonKey(name: 'total_pages')
   int? get totalPages;
   @override
+  @JsonKey(name: 'total_results')
   int? get totalResults;
   @override
   @JsonKey(ignore: true)

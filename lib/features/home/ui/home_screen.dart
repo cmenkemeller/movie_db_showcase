@@ -1,7 +1,6 @@
 import 'package:equifax_movie_db/core/mdb_theme.dart';
-import 'package:equifax_movie_db/features/details/ui/details_feature.dart';
-import 'package:equifax_movie_db/features/home/ui/home_feature.dart';
 import 'package:equifax_movie_db/models/movie.dart';
+import 'package:equifax_movie_db/widgets/movie_list_tile.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -46,18 +45,13 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        SliverList.builder(
-          itemCount: movieList.length,
-          itemBuilder: (context, index) {
-            final movie = movieList[index];
-            return ListTile(
-              title: Text(movie.title),
-              subtitle: Text(movie.overview),
-              onTap: () =>
-                  DetailsFeature(id: movie.id.toString()).push(context),
-            );
-          },
-        ),
+        SliverList.separated(
+            separatorBuilder: (context, index) => const SizedBox(height: 18),
+            itemCount: movieList.length,
+            itemBuilder: (context, index) {
+              final movie = movieList[index];
+              return MovieListTile(movie: movie);
+            }),
       ]),
     );
   }

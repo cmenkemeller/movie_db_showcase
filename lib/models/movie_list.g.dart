@@ -13,14 +13,14 @@ _$MovieListImpl _$$MovieListImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => Movie.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      totalPages: (json['totalPages'] as num?)?.toInt(),
-      totalResults: (json['totalResults'] as num?)?.toInt(),
+      totalPages: (json['total_pages'] as num?)?.toInt(),
+      totalResults: (json['total_results'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$MovieListImplToJson(_$MovieListImpl instance) =>
     <String, dynamic>{
       'page': instance.page,
       'results': instance.results,
-      'totalPages': instance.totalPages,
-      'totalResults': instance.totalResults,
+      'total_pages': instance.totalPages,
+      'total_results': instance.totalResults,
     };

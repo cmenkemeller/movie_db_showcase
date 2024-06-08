@@ -9,8 +9,8 @@ class MovieList with _$MovieList {
   factory MovieList({
     int? page,
     @Default([]) List<Movie> results,
-    int? totalPages,
-    int? totalResults,
+    @JsonKey(name: 'total_pages') int? totalPages,
+    @JsonKey(name: 'total_results') int? totalResults,
   }) = _MovieList;
 
   factory MovieList.fromJson(Map<String, dynamic> json) =>
