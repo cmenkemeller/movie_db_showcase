@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 class TitleSubtitleText extends StatelessWidget {
   final String title;
   final String subtitle;
+  final int? subtitleMaxLines;
   const TitleSubtitleText(
-      {required this.title, required this.subtitle, super.key});
+      {required this.title,
+      required this.subtitle,
+      this.subtitleMaxLines,
+      super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,7 @@ class TitleSubtitleText extends StatelessWidget {
         Text(
           subtitle,
           style: context.textTheme.bodyMedium,
-          maxLines: 1,
+          maxLines: subtitleMaxLines,
         ),
       ],
     );

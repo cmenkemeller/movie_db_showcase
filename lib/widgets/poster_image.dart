@@ -4,6 +4,7 @@ class PosterImage extends StatelessWidget {
   final String posterPath;
   const PosterImage({required this.posterPath, super.key});
 
+  static const double height = 120;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -11,7 +12,7 @@ class PosterImage extends StatelessWidget {
       child: Image.network(
         'https://image.tmdb.org/t/p/w500$posterPath',
         width: 95,
-        height: 120,
+        height: height,
         fit: BoxFit.cover,
       ),
     );

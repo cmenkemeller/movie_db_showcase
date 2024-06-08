@@ -9,8 +9,13 @@ class DetailsPresenter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Details'),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        label: const Text('Back'),
+        icon: const Icon(Icons.arrow_back),
       ),
       body: BlocBuilder<DetailsCubit, DetailsState>(
         builder: (context, state) {

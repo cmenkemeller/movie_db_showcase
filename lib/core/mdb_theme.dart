@@ -7,13 +7,13 @@ extension BuildContextExtension on BuildContext {
 }
 
 class MDBTheme {
-  static const Color primaryColor = Color(0xFF4CB9B4); // Medium Aquamarine
+  static const Color primaryColor = Color(0xFF4CB9B4);
   static const Color secondaryColor = Color(0xFF3A3F47);
-  static const Color surfaceColor = Color(0xFF232931); // Light Gray
+  static const Color surfaceColor = Color(0xFF232931);
   static const Color surfaceContainerColor = Color(0xFF232931);
-  static const Color errorColor = Color(0xFFB00020); // Red
-  static const Color onPrimaryColor = Color(0xFFEBEBEB);
-  static const Color onSecondaryColor = Color(0xFFEBEBEB);
+  static const Color errorColor = Color(0xFFB00020);
+  static const Color onPrimaryColor = Color(0xFFEEEEEE);
+  static const Color onSecondaryColor = Color(0xFFEEEEEE);
   static const Color onSurfaceColor = Color(0xFFEBEBEB);
   static const Color onErrorColor = Color(0xFFEBEBEB);
 
@@ -59,6 +59,17 @@ class MDBTheme {
           ),
         ),
       ),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: secondaryColor,
+        foregroundColor: onSecondaryColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(radiusM),
+        ),
+        extendedTextStyle: MDBTextTheme._textTheme.labelLarge,
+        elevation: 0,
+        extendedSizeConstraints: const BoxConstraints.tightFor(height: 42),
+        extendedPadding: const EdgeInsets.symmetric(horizontal: 17),
+      ),
     );
   }
 }
@@ -80,6 +91,10 @@ class MDBTextTheme {
     bodyMedium: const TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w400,
+    ),
+    labelLarge: const TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w600,
     ),
   );
 }
