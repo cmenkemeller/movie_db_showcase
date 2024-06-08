@@ -350,11 +350,11 @@ void main() {
   };
   group('MovieList', () {
     test('verify json parsing', () {
-      
       final movieList = MovieList.fromJson(mockMovieListJson);
 
       expect(movieList.page, mockMovieListJson['page']);
-      expect(movieList.results.length, (mockMovieListJson['results'] as List).length);
+      expect(movieList.results.length,
+          (mockMovieListJson['results'] as List).length);
       expect(movieList.totalPages, mockMovieListJson['total_pages']);
       expect(movieList.totalResults, mockMovieListJson['total_results']);
     });

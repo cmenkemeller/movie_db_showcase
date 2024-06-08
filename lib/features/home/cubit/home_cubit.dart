@@ -1,6 +1,10 @@
 import 'package:equifax_movie_db/client/mdb_client.dart';
-import 'package:equifax_movie_db/features/home/cubit/home_state.dart';
+import 'package:equifax_movie_db/models/movie.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'home_cubit.freezed.dart';
+part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   final MDBClient? client;

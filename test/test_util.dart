@@ -3,7 +3,6 @@ import 'package:dio/dio.dart';
 import 'package:equifax_movie_db/client/mdb_client.dart';
 import 'package:equifax_movie_db/features/details/cubit/details_cubit.dart';
 import 'package:equifax_movie_db/features/home/cubit/home_cubit.dart';
-import 'package:equifax_movie_db/features/home/cubit/home_state.dart';
 import 'package:equifax_movie_db/models/movie.dart';
 import 'package:equifax_movie_db/models/movie_list.dart';
 import 'package:flutter/material.dart';
