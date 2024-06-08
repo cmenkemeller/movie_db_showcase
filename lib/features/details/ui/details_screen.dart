@@ -1,8 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:equifax_movie_db/core/mdb_theme.dart';
 import 'package:equifax_movie_db/models/movie.dart';
 import 'package:equifax_movie_db/widgets/poster_image.dart';
 import 'package:equifax_movie_db/widgets/title_subtitle_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -22,9 +24,15 @@ class DetailsScreen extends StatelessWidget {
             snap: true,
             automaticallyImplyLeading: false,
             flexibleSpace: FlexibleSpaceBar(
-              background: Image.network(
-                'https://image.tmdb.org/t/p/w1280${movie.backdropPath}',
+              background: CachedNetworkImage(
+                imageUrl:
+                    'https://image.tmdb.org/t/p/w1280${movie.backdropPath}',
                 fit: BoxFit.cover,
+                placeholder: (context, url) => Center(
+                  child: SpinKitPulse(
+                    color: context.theme.colorScheme.onPrimaryContainer,
+                  ),
+                ),
               ),
             ),
             bottom: PreferredSize(
@@ -91,9 +99,10 @@ class DetailsScreen extends StatelessWidget {
             ]),
           ),
           const SliverToBoxAdapter(
-              child: SizedBox(
-            height: 50,
-          )),
+            child: SizedBox(
+              height: 50,
+            ),
+          ),
         ],
       ),
     );
