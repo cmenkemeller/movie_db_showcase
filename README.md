@@ -49,7 +49,7 @@ Repository must contain:
 - A Readme file, with details of the implementation, assumptions made and scripts or a step by step guide to run the application in either iOS or Android. If needed, specify the target platform.
 - Source Code
 
-# Steps
+# Steps in creation
 1. Create new Flutter Project
 2. Determine end points
     - Obtain API Key from themoviedb
@@ -61,5 +61,8 @@ Repository must contain:
     - Use environmental variables for api key access, passed in at runtime
 5. Add Routing
     - Using go_router package
+6. Add caching/offline support
+    - Using Dio Cache Interceptor and Hive
+    - Forcing cache
 
 
