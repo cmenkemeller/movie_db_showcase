@@ -19,13 +19,9 @@ class DetailsPresenter extends StatelessWidget {
       ),
       body: BlocBuilder<DetailsCubit, DetailsState>(
         builder: (context, state) {
-          if (state.isLoading || state.movie == null) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
           return DetailsScreen(
-            movie: state.movie!,
+            movie: state.movie,
+            isLoading: state.isLoading,
           );
         },
       ),

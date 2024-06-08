@@ -7,30 +7,35 @@ import 'package:flutter/material.dart';
 
 class MovieListTile extends StatelessWidget {
   final Movie movie;
-  const MovieListTile({required this.movie, super.key});
+  final EdgeInsets? padding;
+  const MovieListTile({required this.movie, this.padding, super.key});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => DetailsFeature(id: movie.id.toString()).push(context),
-      child: IntrinsicHeight(
-        child: Row(children: [
-          PosterImage(posterPath: movie.posterPath ?? ''),
-          const SizedBox(width: 8),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TitleSubtitleText(title: 'Title:', subtitle: movie.title),
-              if (movie.releaseDate != null)
+      child: Padding(
+        padding: padding ?? const EdgeInsets.all(0),
+        child: IntrinsicHeight(
+          child: Row(children: [
+            PosterImage(posterPath: movie.posterPath ?? ''),
+            const SizedBox(width: 8),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TitleSubtitleText(title: 'Title:', subtitle: movie.title),
+                if (movie.releaseDate != null)
+                  TitleSubtitleText(
+                      title: 'Release Date:',
+                      subtitle: movie.releaseDate ?? ''),
                 TitleSubtitleText(
-                    title: 'Release Date:', subtitle: movie.releaseDate ?? ''),
-              TitleSubtitleText(
-                  title: 'Average Rating:',
-                  subtitle: movie.voteAverage.toString()),
-            ],
-          ),
-        ]),
+                    title: 'Average Rating:',
+                    subtitle: movie.voteAverage.toString()),
+              ],
+            ),
+          ]),
+        ),
       ),
     );
   }

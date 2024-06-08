@@ -18,6 +18,7 @@ class MDBTheme {
   static const Color onErrorColor = Color(0xFFEBEBEB);
 
   static const radiusM = 16.0;
+  static const paddingMargin = 29.0;
 
   static ThemeData get theme {
     return ThemeData(

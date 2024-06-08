@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$DetailsState {
   bool get isLoading => throw _privateConstructorUsedError;
-  Movie? get movie => throw _privateConstructorUsedError;
+  Movie get movie => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DetailsStateCopyWith<DetailsState> get copyWith =>
@@ -30,9 +30,9 @@ abstract class $DetailsStateCopyWith<$Res> {
           DetailsState value, $Res Function(DetailsState) then) =
       _$DetailsStateCopyWithImpl<$Res, DetailsState>;
   @useResult
-  $Res call({bool isLoading, Movie? movie});
+  $Res call({bool isLoading, Movie movie});
 
-  $MovieCopyWith<$Res>? get movie;
+  $MovieCopyWith<$Res> get movie;
 }
 
 /// @nodoc
@@ -49,28 +49,24 @@ class _$DetailsStateCopyWithImpl<$Res, $Val extends DetailsState>
   @override
   $Res call({
     Object? isLoading = null,
-    Object? movie = freezed,
+    Object? movie = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      movie: freezed == movie
+      movie: null == movie
           ? _value.movie
           : movie // ignore: cast_nullable_to_non_nullable
-              as Movie?,
+              as Movie,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $MovieCopyWith<$Res>? get movie {
-    if (_value.movie == null) {
-      return null;
-    }
-
-    return $MovieCopyWith<$Res>(_value.movie!, (value) {
+  $MovieCopyWith<$Res> get movie {
+    return $MovieCopyWith<$Res>(_value.movie, (value) {
       return _then(_value.copyWith(movie: value) as $Val);
     });
   }
@@ -84,10 +80,10 @@ abstract class _$$DetailsStateImplCopyWith<$Res>
       __$$DetailsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, Movie? movie});
+  $Res call({bool isLoading, Movie movie});
 
   @override
-  $MovieCopyWith<$Res>? get movie;
+  $MovieCopyWith<$Res> get movie;
 }
 
 /// @nodoc
@@ -102,17 +98,17 @@ class __$$DetailsStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = null,
-    Object? movie = freezed,
+    Object? movie = null,
   }) {
     return _then(_$DetailsStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      movie: freezed == movie
+      movie: null == movie
           ? _value.movie
           : movie // ignore: cast_nullable_to_non_nullable
-              as Movie?,
+              as Movie,
     ));
   }
 }
@@ -120,12 +116,12 @@ class __$$DetailsStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DetailsStateImpl implements _DetailsState {
-  const _$DetailsStateImpl({required this.isLoading, this.movie});
+  const _$DetailsStateImpl({required this.isLoading, required this.movie});
 
   @override
   final bool isLoading;
   @override
-  final Movie? movie;
+  final Movie movie;
 
   @override
   String toString() {
@@ -154,12 +150,13 @@ class _$DetailsStateImpl implements _DetailsState {
 
 abstract class _DetailsState implements DetailsState {
   const factory _DetailsState(
-      {required final bool isLoading, final Movie? movie}) = _$DetailsStateImpl;
+      {required final bool isLoading,
+      required final Movie movie}) = _$DetailsStateImpl;
 
   @override
   bool get isLoading;
   @override
-  Movie? get movie;
+  Movie get movie;
   @override
   @JsonKey(ignore: true)
   _$$DetailsStateImplCopyWith<_$DetailsStateImpl> get copyWith =>

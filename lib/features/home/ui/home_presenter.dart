@@ -12,12 +12,10 @@ class HomePresenter extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: BlocBuilder<HomeCubit, HomeState>(builder: (context, state) {
-          if (state.isLoading) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-          return HomeScreen(movieList: state.movieList);
+          return HomeScreen(
+            movieList: state.movieList,
+            isLoading: state.isLoading,
+          );
         }),
       ),
     );

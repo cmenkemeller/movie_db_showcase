@@ -4,7 +4,6 @@ import 'package:dio_cache_interceptor_hive_store/dio_cache_interceptor_hive_stor
 import 'package:path_provider/path_provider.dart';
 
 class MDBCache {
-  
   late CacheStore _cacheStore;
 
   Options options() {
