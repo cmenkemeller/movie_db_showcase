@@ -10,14 +10,16 @@ class HomePresenter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<HomeCubit, HomeState>(builder: (context, state) {
-        if (state.isLoading) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        }
-        return HomeScreen(movieList: state.movieList);
-      }),
+      body: SafeArea(
+        child: BlocBuilder<HomeCubit, HomeState>(builder: (context, state) {
+          if (state.isLoading) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          return HomeScreen(movieList: state.movieList);
+        }),
+      ),
     );
   }
 }

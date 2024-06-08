@@ -8,7 +8,7 @@ extension BuildContextExtension on BuildContext {
 
 class MDBTheme {
   static const Color primaryColor = Color(0xFF4CB9B4); // Medium Aquamarine
-  static const Color secondaryColor = Color(0xFF695B77); // Dark Lavender
+  static const Color secondaryColor = Color(0xFF3A3F47);
   static const Color surfaceColor = Color(0xFF232931); // Light Gray
   static const Color surfaceContainerColor = Color(0xFF232931);
   static const Color errorColor = Color(0xFFB00020); // Red
@@ -21,6 +21,7 @@ class MDBTheme {
 
   static ThemeData get theme {
     return ThemeData(
+      fontFamily: GoogleFonts.poppins().fontFamily,
       textTheme: MDBTextTheme._textTheme,
       colorScheme: const ColorScheme(
         primary: primaryColor,
@@ -64,6 +65,14 @@ class MDBTheme {
 
 class MDBTextTheme {
   static final TextTheme _textTheme = GoogleFonts.poppinsTextTheme().copyWith(
+    displayLarge: const TextStyle(
+      fontSize: 36,
+      fontWeight: FontWeight.w700,
+    ),
+    headlineLarge: const TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.w600,
+    ),
     bodyLarge: const TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w500,

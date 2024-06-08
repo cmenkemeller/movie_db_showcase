@@ -10,30 +10,43 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(horizontal: 29),
       child: CustomScrollView(slivers: [
         SliverToBoxAdapter(
-          child: Text(
-            'Movie DB App',
-            style: context.textTheme.displayLarge,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 50.0, bottom: 22.0),
+            child: Text(
+              'Movie DB App',
+              style: context.textTheme.displayLarge,
+            ),
           ),
         ),
         SliverToBoxAdapter(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
                 'Find your movies',
-                style: context.textTheme.titleLarge,
+                style: context.textTheme.headlineLarge,
               ),
+              const SizedBox(height: 18),
               Row(
                 children: [
-                  SearchAnchor(
-                    builder: (context, controller) => const SearchBar(),
-                    suggestionsBuilder:
-                        (BuildContext context, SearchController controller) {
-                      return List.generate(5, (index) => const SizedBox());
-                    },
+                  Expanded(
+                    child: SearchAnchor(
+                      builder: (context, controller) => const SearchBar(
+                        hintText: 'Search Here ...',
+                        constraints: BoxConstraints(
+                          maxHeight: 42,
+                          minHeight: 42
+                        
+                        ),
+                      ),
+                      suggestionsBuilder:
+                          (BuildContext context, SearchController controller) {
+                        return List.generate(5, (index) => const SizedBox());
+                      },
+                    ),
                   ),
                   const SizedBox(width: 16),
                   IconButton(
@@ -42,6 +55,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: 22),
             ],
           ),
         ),
