@@ -5,8 +5,10 @@ import 'package:equifax_movie_db/core/mdb_cache.dart';
 import 'package:equifax_movie_db/core/mdb_router.dart';
 import 'package:equifax_movie_db/core/mdb_theme.dart';
 import 'package:equifax_movie_db/features/search/cubit/cubit/search_cubit.dart';
+import 'package:equifax_movie_db/i18n/strings.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class MovieDatabaseApp extends StatelessWidget {
@@ -23,6 +25,9 @@ class MovieDatabaseApp extends StatelessWidget {
 
     return MaterialApp.router(
         routerConfig: MDBRouter.router,
+        locale: TranslationProvider.of(context).flutterLocale,
+        supportedLocales: AppLocaleUtils.supportedLocales,
+        localizationsDelegates: GlobalMaterialLocalizations.delegates,
         theme: MDBTheme.theme,
         builder: (context, child) {
           return FutureBuilder<DioCacheInterceptor>(

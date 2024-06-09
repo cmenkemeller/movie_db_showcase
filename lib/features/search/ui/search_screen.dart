@@ -1,5 +1,6 @@
 import 'package:equifax_movie_db/core/mdb_theme.dart';
 import 'package:equifax_movie_db/features/search/cubit/cubit/search_cubit.dart';
+import 'package:equifax_movie_db/i18n/strings.g.dart';
 import 'package:equifax_movie_db/util/widget_extension.dart';
 import 'package:equifax_movie_db/widgets/movie_list_tile.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,7 @@ class _SearchWidgetState extends State<SearchWidget> {
             searchController: _controller,
             builder: (context, controller) => SearchBar(
               controller: _textController,
-              hintText: 'Search Here ...',
+              hintText: '${localize.searchHere} ...',
               constraints: const BoxConstraints(maxHeight: 42, minHeight: 42),
               onSubmitted: (value) {
                 _controller.openView();

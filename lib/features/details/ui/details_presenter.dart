@@ -1,5 +1,6 @@
 import 'package:equifax_movie_db/features/details/cubit/details_cubit.dart';
 import 'package:equifax_movie_db/features/details/ui/details_screen.dart';
+import 'package:equifax_movie_db/i18n/strings.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,7 +13,7 @@ class DetailsPresenter extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => Navigator.pop(context),
-        label: const Text('Back'),
+        label: Text(localize.back),
         icon: const Icon(Icons.arrow_back),
       ),
       body: BlocBuilder<DetailsCubit, DetailsState>(

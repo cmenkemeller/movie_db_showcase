@@ -8,6 +8,23 @@
         "TMDB_KEY": "[YOUR API KEY HERE]"
     }
     ```
+2. Use .vscode launch for proper run commands or run the following command in your terminal
+    ```
+    flutter run --dart-define-from-file api-keys.json
+    ```
+3. You can switch language between English and Spanish by changing the localization code in `main.dart`
+
+```
+LocaleSettings.setLocal(AppLocale.es);
+```
+
+## What I would have done with more time
+1. Normally I would write tests as I develop a feature, instead of writing all tests at the end.
+2. Clean up the cache initialization process (the MovieDatabaseApp is messier than I would like)
+3. Error handling. I avoided error handling for the api calls. There are great ways to do it with Dio interceptors but I did not want to take the time to implement for this short project.
+4. Create a proper widget library
+5. Create proper constants for UI (padding, text styles, radii, etc...) and add them to MaterialTheme via Theme Extensions
+
 
 ## Credits
 This project was created from scratch by Cardin Menkemeller.

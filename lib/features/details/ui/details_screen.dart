@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:equifax_movie_db/core/mdb_theme.dart';
+import 'package:equifax_movie_db/i18n/strings.g.dart';
 import 'package:equifax_movie_db/models/movie.dart';
 import 'package:equifax_movie_db/widgets/poster_image.dart';
 import 'package:equifax_movie_db/widgets/title_subtitle_text.dart';
@@ -66,12 +67,12 @@ class DetailsScreen extends StatelessWidget {
                 .copyWith(top: PosterImage.height / 2 + 18),
             sliver: SliverList.list(children: [
               TitleSubtitleText(
-                title: 'Overview:',
+                title: '${localize.overview}:',
                 subtitle: movie.overview,
               ),
               const SizedBox(height: 12),
               TitleSubtitleText(
-                title: 'Release Date:',
+                title: '${localize.releaseDate}:',
                 subtitle: movie.releaseDate.toString(),
               ),
               const SizedBox(height: 12),
@@ -79,13 +80,13 @@ class DetailsScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: TitleSubtitleText(
-                      title: 'Average Rating:',
+                      title: '${localize.averageRating}:',
                       subtitle: movie.voteAverage.toString(),
                     ),
                   ),
                   Expanded(
                     child: TitleSubtitleText(
-                      title: 'Vote Count:',
+                      title: '${localize.voteCount}:',
                       subtitle: movie.voteCount.toString(),
                     ),
                   ),
@@ -93,7 +94,7 @@ class DetailsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               TitleSubtitleText(
-                title: 'Popularity:',
+                title: '${localize.popularity}:',
                 subtitle: movie.popularity.toString(),
               ),
             ]),

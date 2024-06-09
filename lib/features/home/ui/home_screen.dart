@@ -1,5 +1,6 @@
 import 'package:equifax_movie_db/core/mdb_theme.dart';
 import 'package:equifax_movie_db/features/search/ui/search_screen.dart';
+import 'package:equifax_movie_db/i18n/strings.g.dart';
 import 'package:equifax_movie_db/models/movie.dart';
 import 'package:equifax_movie_db/util/widget_extension.dart';
 import 'package:equifax_movie_db/widgets/movie_list_tile.dart';
@@ -17,10 +18,10 @@ class HomeScreen extends StatelessWidget {
       SliverAppBar.large(
         pinned: true,
         automaticallyImplyLeading: false,
-        title: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 11.0),
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 11.0),
           child: Text(
-            'Movie DB App',
+            localize.appName,
           ),
         ),
         titleTextStyle: context.textTheme.displayLarge,
@@ -30,7 +31,7 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              'Find your movies',
+              localize.findYourMovies,
               style: context.textTheme.headlineLarge,
             ),
             const SizedBox(height: 18),

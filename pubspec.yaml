@@ -24,6 +24,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
   cupertino_icons: ^1.0.6
   freezed_annotation: ^2.4.1
@@ -44,6 +46,8 @@ dependencies:
   mocktail: ^1.0.3
   bloc_test: ^9.1.7
   mocktail_image_network: ^1.1.0
+  slang: ^3.31.0
+  slang_flutter: ^3.31.0
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +59,7 @@ dev_dependencies:
   retrofit_generator: ^8.1.0
   build_verify: ^3.1.0
   go_router_builder: ^2.7.0
+  slang_build_runner: ^3.31.0
 
 flutter:
 

@@ -1,5 +1,6 @@
 import 'package:equifax_movie_db/features/details/ui/details_route.dart';
 import 'package:equifax_movie_db/features/home/ui/home_route.dart';
+import 'package:equifax_movie_db/i18n/strings.g.dart';
 import 'package:equifax_movie_db/models/movie.dart';
 import 'package:equifax_movie_db/widgets/poster_image.dart';
 import 'package:equifax_movie_db/widgets/title_subtitle_text.dart';
@@ -66,16 +67,16 @@ class _MovieListTileState extends State<MovieListTile>
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TitleSubtitleText(
-                        title: 'Title:',
+                        title: '${localize.title}:',
                         subtitle: widget.movie.title,
                         subtitleMaxLines: 1,
                       ),
                       if (widget.movie.releaseDate != null)
                         TitleSubtitleText(
-                            title: 'Release Date:',
+                            title: '${localize.releaseDate}:',
                             subtitle: widget.movie.releaseDate ?? ''),
                       TitleSubtitleText(
-                          title: 'Average Rating:',
+                          title: '${localize.averageRating}:',
                           subtitle: widget.movie.voteAverage.toString()),
                     ],
                   ),

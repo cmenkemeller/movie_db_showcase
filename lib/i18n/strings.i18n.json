@@ -1,0 +1,12 @@
+{
+    "appName": "Movies DB App",
+    "findYourMovies": "Find your movies",
+    "title": "Title",
+    "releaseDate": "Release Date",
+    "averageRating": "Average Rating",
+    "searchHere": "Search here",
+    "overview": "Overview",
+    "popularity": "Popularity",
+    "voteCount": "Vote Count",
+    "back": "Back"
+}

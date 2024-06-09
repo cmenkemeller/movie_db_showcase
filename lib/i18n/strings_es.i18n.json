@@ -1,0 +1,12 @@
+{
+    "appName": "App de Movies DB",
+    "findYourMovies": "Encuentra tus películas",
+    "title": "Título",
+    "releaseDate": "Fecha de Lanzamiento",
+    "averageRating": "Calificación Promedio",
+    "searchHere": "Buscar aquí",
+    "overview": "Resumen",
+    "popularity": "Popularidad",
+    "voteCount": "Conteo de Votos",
+    "back": "Regresar"
+}
