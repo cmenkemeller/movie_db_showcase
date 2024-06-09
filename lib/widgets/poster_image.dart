@@ -10,16 +10,19 @@ class PosterImage extends StatelessWidget {
   static const double height = 120;
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(16),
-      child: CachedNetworkImage(
-        imageUrl: 'https://image.tmdb.org/t/p/w500$posterPath',
-        width: 95,
-        height: height,
-        fit: BoxFit.cover,
-        placeholder: (context, url) => Center(
-          child: SpinKitPulse(
-            color: context.theme.colorScheme.onPrimaryContainer,
+    return Hero(
+      tag: posterPath,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: CachedNetworkImage(
+          imageUrl: 'https://image.tmdb.org/t/p/w500$posterPath',
+          width: 95,
+          height: height,
+          fit: BoxFit.cover,
+          placeholder: (context, url) => Center(
+            child: SpinKitPulse(
+              color: context.theme.colorScheme.onPrimaryContainer,
+            ),
           ),
         ),
       ),

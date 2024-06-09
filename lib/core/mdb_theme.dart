@@ -35,8 +35,9 @@ class MDBTheme {
         onSecondary: onSecondaryColor,
         onSurface: onSurfaceColor,
         onError: onErrorColor,
-        brightness: Brightness.light,
+        brightness: Brightness.dark,
       ),
+      splashColor: secondaryColor.withOpacity(0.9),
       primaryColor: primaryColor,
       scaffoldBackgroundColor: surfaceColor,
       buttonTheme: const ButtonThemeData(

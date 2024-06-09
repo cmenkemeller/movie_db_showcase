@@ -11,100 +11,108 @@ import 'package:skeletonizer/skeletonizer.dart';
 class DetailsScreen extends StatelessWidget {
   final Movie movie;
   final bool isLoading;
-  const DetailsScreen({required this.movie, this.isLoading = true, super.key});
+  const DetailsScreen({required this.movie, this.isLoading = false, super.key});
 
   static const double appBarHeight = 120;
   @override
   Widget build(BuildContext context) {
-    return Skeletonizer(
-      enabled: isLoading,
-      child: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            floating: true,
-            snap: true,
-            automaticallyImplyLeading: false,
-            flexibleSpace: FlexibleSpaceBar(
-              background: CachedNetworkImage(
-                imageUrl:
-                    'https://image.tmdb.org/t/p/w1280${movie.backdropPath}',
-                fit: BoxFit.cover,
-                placeholder: (context, url) => Center(
-                  child: SpinKitPulse(
-                    color: context.theme.colorScheme.onPrimaryContainer,
+    return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => Navigator.pop(context),
+        label: Text(localize.back),
+        icon: const Icon(Icons.arrow_back),
+      ),
+      body: Skeletonizer(
+        enabled: isLoading,
+        child: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              floating: true,
+              snap: true,
+              automaticallyImplyLeading: false,
+              flexibleSpace: FlexibleSpaceBar(
+                background: CachedNetworkImage(
+                  imageUrl:
+                      'https://image.tmdb.org/t/p/w1280${movie.backdropPath}',
+                  fit: BoxFit.cover,
+                  placeholder: (context, url) => Center(
+                    child: SpinKitPulse(
+                      color: context.theme.colorScheme.onPrimaryContainer,
+                    ),
                   ),
                 ),
               ),
-            ),
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(appBarHeight),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 29.0),
-                child: Transform.translate(
-                  offset: const Offset(0, PosterImage.height / 2),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      PosterImage(
-                        posterPath: movie.posterPath ?? '',
-                      ),
-                      const SizedBox(width: 12),
-                      Flexible(
-                        child: Text(
-                          movie.title,
-                          style: context.textTheme.headlineLarge,
-                          maxLines: 2,
+              bottom: PreferredSize(
+                preferredSize: const Size.fromHeight(appBarHeight),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 29.0),
+                  child: Transform.translate(
+                    offset: const Offset(0, PosterImage.height / 2),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        PosterImage(
+                          posterPath: movie.posterPath ?? '',
                         ),
-                      ),
-                    ],
+                        const SizedBox(width: 12),
+                        Flexible(
+                          child: Text(
+                            movie.title,
+                            style: context.textTheme.headlineLarge,
+                            maxLines: 2,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          SliverPadding(
-            padding: const EdgeInsets.symmetric(horizontal: 29.0)
-                .copyWith(top: PosterImage.height / 2 + 18),
-            sliver: SliverList.list(children: [
-              TitleSubtitleText(
-                title: '${localize.overview}:',
-                subtitle: movie.overview,
-              ),
-              const SizedBox(height: 12),
-              TitleSubtitleText(
-                title: '${localize.releaseDate}:',
-                subtitle: movie.releaseDate.toString(),
-              ),
-              const SizedBox(height: 12),
-              Row(
-                children: [
-                  Expanded(
-                    child: TitleSubtitleText(
-                      title: '${localize.averageRating}:',
-                      subtitle: movie.voteAverage.toString(),
+            SliverPadding(
+              padding: const EdgeInsets.symmetric(horizontal: 29.0)
+                  .copyWith(top: PosterImage.height / 2 + 18),
+              sliver: SliverList.list(children: [
+                TitleSubtitleText(
+                  title: '${localize.overview}:',
+                  subtitle: movie.overview,
+                ),
+                const SizedBox(height: 12),
+                TitleSubtitleText(
+                  title: '${localize.releaseDate}:',
+                  subtitle: movie.releaseDate.toString(),
+                ),
+                const SizedBox(height: 12),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TitleSubtitleText(
+                        title: '${localize.averageRating}:',
+                        subtitle: movie.voteAverage.toString(),
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    child: TitleSubtitleText(
-                      title: '${localize.voteCount}:',
-                      subtitle: movie.voteCount.toString(),
+                    Expanded(
+                      child: TitleSubtitleText(
+                        title: '${localize.voteCount}:',
+                        subtitle: movie.voteCount.toString(),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 12),
-              TitleSubtitleText(
-                title: '${localize.popularity}:',
-                subtitle: movie.popularity.toString(),
-              ),
-            ]),
-          ),
-          const SliverToBoxAdapter(
-            child: SizedBox(
-              height: 50,
+                  ],
+                ),
+                const SizedBox(height: 12),
+                TitleSubtitleText(
+                  title: '${localize.popularity}:',
+                  subtitle: movie.popularity.toString(),
+                ),
+              ]),
             ),
-          ),
-        ],
+            const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 50,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
