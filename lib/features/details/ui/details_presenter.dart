@@ -11,9 +11,7 @@ class DetailsPresenter extends StatelessWidget {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          Navigator.pop(context);
-        },
+        onPressed: () => Navigator.pop(context),
         label: const Text('Back'),
         icon: const Icon(Icons.arrow_back),
       ),

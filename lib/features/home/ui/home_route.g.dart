@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'home_feature.dart';
+part of 'home_route.dart';
 
 // **************************************************************************
 // GoRouterGenerator
 // **************************************************************************
 
 List<RouteBase> get $appRoutes => [
-      $homeFeature,
+      $homeRoute,
     ];
 
-RouteBase get $homeFeature => GoRouteData.$route(
+RouteBase get $homeRoute => GoRouteData.$route(
       path: '/',
-      factory: $HomeFeatureExtension._fromState,
+      factory: $HomeRouteExtension._fromState,
       routes: [
         GoRouteData.$route(
           path: 'details/:id',
@@ -21,8 +21,8 @@ RouteBase get $homeFeature => GoRouteData.$route(
       ],
     );
 
-extension $HomeFeatureExtension on HomeFeature {
-  static HomeFeature _fromState(GoRouterState state) => HomeFeature();
+extension $HomeRouteExtension on HomeRoute {
+  static HomeRoute _fromState(GoRouterState state) => HomeRoute();
 
   String get location => GoRouteData.$location(
         '/',

@@ -10,16 +10,16 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class MovieDatabaseApp extends StatelessWidget {
   final MDBCache cache;
-  const MovieDatabaseApp({required this.cache, super.key});
+  final String _apiKey;
+  const MovieDatabaseApp({required this.cache, String? apiKey, super.key})
+      : _apiKey = apiKey ?? const String.fromEnvironment('TMDB_KEY');
 
   @override
   Widget build(BuildContext context) {
-    const apiKey = String.fromEnvironment('TMDB_KEY');
-
-    final baseOptions = BaseOptions(queryParameters: {'api_key': apiKey});
+    final baseOptions = BaseOptions(queryParameters: {'api_key': _apiKey});
     Dio dio = Dio(baseOptions);
-
     dio.interceptors.add(PrettyDioLogger());
+    
     return MaterialApp.router(
         routerConfig: MDBRouter.router,
         theme: MDBTheme.theme,
@@ -38,7 +38,9 @@ class MovieDatabaseApp extends StatelessWidget {
                     child: child,
                   );
                 }
-                return const CircularProgressIndicator();
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
               });
         });
   }

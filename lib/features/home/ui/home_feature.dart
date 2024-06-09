@@ -1,22 +1,16 @@
 import 'package:equifax_movie_db/client/mdb_client.dart';
-import 'package:equifax_movie_db/features/details/ui/details_route.dart';
 import 'package:equifax_movie_db/features/home/cubit/home_cubit.dart';
 import 'package:equifax_movie_db/features/home/ui/home_presenter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
-part 'home_feature.g.dart';
+class HomeFeature extends StatelessWidget {
+  const HomeFeature({super.key});
 
-@TypedGoRoute<HomeFeature>(path: '/', routes: [
-  TypedGoRoute<DetailsRoute>(
-    path: 'details/:id',
-  )
-])
-@immutable
-class HomeFeature extends GoRouteData {
   @override
-  Widget build(BuildContext context, GoRouterState state) {
+  Widget build(
+    BuildContext context,
+  ) {
     return BlocProvider(
       create: (context) =>
           HomeCubit(client: RepositoryProvider.of<MDBClient>(context))

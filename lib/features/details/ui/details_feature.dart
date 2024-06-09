@@ -6,15 +6,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DetailsFeature extends StatelessWidget {
   final String id;
-  final DetailsCubit? detailsCubit;
-  const DetailsFeature({required this.id, this.detailsCubit, super.key});
+  const DetailsFeature({required this.id, super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => (detailsCubit ??
-          DetailsCubit(client: RepositoryProvider.of<MDBClient>(context)))
-        ..loadDetails(id: id),
+      create: (context) =>
+          DetailsCubit(client: RepositoryProvider.of<MDBClient>(context))
+            ..loadDetails(id: id),
       child: const DetailsPresenter(),
     );
   }

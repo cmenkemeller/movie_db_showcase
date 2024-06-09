@@ -1,5 +1,5 @@
 import 'package:equifax_movie_db/features/details/ui/details_route.dart';
-import 'package:equifax_movie_db/features/home/ui/home_feature.dart';
+import 'package:equifax_movie_db/features/home/ui/home_route.dart';
 import 'package:equifax_movie_db/models/movie.dart';
 import 'package:equifax_movie_db/widgets/poster_image.dart';
 import 'package:equifax_movie_db/widgets/title_subtitle_text.dart';
