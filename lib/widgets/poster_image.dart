@@ -19,6 +19,19 @@ class PosterImage extends StatelessWidget {
           width: 95,
           height: height,
           fit: BoxFit.cover,
+          errorWidget: (context, url, error) => Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(MDBTheme.radiusM),
+              border: Border.all(
+                color: context.theme.colorScheme.error,
+                width: 1.0,
+              ),
+            ),
+            child: Icon(
+              Icons.broken_image_outlined,
+              color: context.theme.colorScheme.error,
+            ),
+          ),
           placeholder: (context, url) => Center(
             child: SpinKitPulse(
               color: context.theme.colorScheme.onPrimaryContainer,

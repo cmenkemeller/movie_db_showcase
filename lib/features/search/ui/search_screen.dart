@@ -1,7 +1,6 @@
 import 'package:equifax_movie_db/core/mdb_theme.dart';
 import 'package:equifax_movie_db/features/search/cubit/cubit/search_cubit.dart';
 import 'package:equifax_movie_db/i18n/strings.g.dart';
-import 'package:equifax_movie_db/util/widget_extension.dart';
 import 'package:equifax_movie_db/widgets/movie_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -54,14 +53,17 @@ class _SearchWidgetState extends State<SearchWidget> {
               return BlocBuilder<SearchCubit, SearchState>(
                 builder: (context, state) {
                   return ListView.separated(
-                    padding: const EdgeInsets.only(bottom: 18),
+                    padding: const EdgeInsets.symmetric(vertical: 18),
                     separatorBuilder: (context, index) =>
                         const SizedBox(height: 18),
                     itemCount: state.movieList.length,
                     itemBuilder: (context, index) {
                       final movie = state.movieList[index];
-                      return MovieListTile(movie: movie)
-                          .paddingHorizontal(MDBTheme.paddingMargin);
+                      return MovieListTile(
+                        movie: movie,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: MDBTheme.paddingMargin),
+                      );
                     },
                   );
                 },

@@ -11,7 +11,7 @@ class MDBTheme {
   static const Color secondaryColor = Color(0xFF3A3F47);
   static const Color surfaceColor = Color(0xFF242A32);
   static const Color surfaceContainerColor = Color(0xFF242A32);
-  static const Color errorColor = Color(0xFFB00020);
+  static const Color errorColor = Color.fromARGB(255, 232, 8, 49);
   static const Color onPrimaryColor = Color(0xFFEEEEEE);
   static const Color onSecondaryColor = Color(0xFFEEEEEE);
   static const Color onSurfaceColor = Color(0xFFEBEBEB);
