@@ -1,5 +1,5 @@
 import 'package:equifax_movie_db/client/mdb_client.dart';
-import 'package:equifax_movie_db/features/details/ui/details_feature.dart';
+import 'package:equifax_movie_db/features/details/ui/details_route.dart';
 import 'package:equifax_movie_db/features/home/cubit/home_cubit.dart';
 import 'package:equifax_movie_db/features/home/ui/home_presenter.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +9,7 @@ import 'package:go_router/go_router.dart';
 part 'home_feature.g.dart';
 
 @TypedGoRoute<HomeFeature>(path: '/', routes: [
-  TypedGoRoute<DetailsFeature>(
+  TypedGoRoute<DetailsRoute>(
     path: 'details/:id',
   )
 ])

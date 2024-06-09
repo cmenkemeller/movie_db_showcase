@@ -1,4 +1,4 @@
-import 'package:equifax_movie_db/features/details/ui/details_feature.dart';
+import 'package:equifax_movie_db/features/details/ui/details_route.dart';
 import 'package:equifax_movie_db/features/home/ui/home_feature.dart';
 import 'package:equifax_movie_db/models/movie.dart';
 import 'package:equifax_movie_db/widgets/poster_image.dart';
@@ -49,7 +49,7 @@ class _MovieListTileState extends State<MovieListTile>
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => DetailsFeature(id: widget.movie.id.toString()).push(context),
+      onTap: () => DetailsRoute(id: widget.movie.id.toString()).push(context),
       child: Padding(
         padding: widget.padding ?? const EdgeInsets.all(0),
         child: IntrinsicHeight(

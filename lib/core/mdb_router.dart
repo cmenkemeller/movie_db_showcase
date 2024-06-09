@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 
 class MDBRouter {
   static GoRouter router = GoRouter(
-    initialLocation: HomeFeature().location,
     routes: $appRoutes,
   );
 }

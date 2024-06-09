@@ -16,7 +16,7 @@ RouteBase get $homeFeature => GoRouteData.$route(
       routes: [
         GoRouteData.$route(
           path: 'details/:id',
-          factory: $DetailsFeatureExtension._fromState,
+          factory: $DetailsRouteExtension._fromState,
         ),
       ],
     );
@@ -38,8 +38,8 @@ extension $HomeFeatureExtension on HomeFeature {
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $DetailsFeatureExtension on DetailsFeature {
-  static DetailsFeature _fromState(GoRouterState state) => DetailsFeature(
+extension $DetailsRouteExtension on DetailsRoute {
+  static DetailsRoute _fromState(GoRouterState state) => DetailsRoute(
         id: state.pathParameters['id']!,
       );
 
