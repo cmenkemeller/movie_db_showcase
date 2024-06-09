@@ -9,8 +9,10 @@ part 'mdb_client.g.dart';
 abstract class MDBClient {
   factory MDBClient(Dio dio, {String baseUrl}) = _MDBClient;
 
-  @GET(MDBEndPoint.discoverMovies)
-  Future<HttpResponse<MovieList>> discoverMovies();
+  @GET('${MDBEndPoint.movies}/{type}')
+  Future<HttpResponse<MovieList>> discoverMovies(
+    @Path('type') String type,
+  );
 
   @GET(MDBEndPoint.movieDetails)
   Future<HttpResponse<Movie>> getDetails(
@@ -24,23 +26,18 @@ abstract class MDBClient {
 }
 
 class MDBPath {
-  static const String discover = 'discover';
   static const String movie = 'movie';
   static const String search = 'search';
   static const String tv = 'tv';
   static const String movieId = 'movie_id';
   static const String query = 'query';
 
-  static const String discoverMovies = '$discover/$movie';
   static const String searchMovies = '$search/$movie';
   static const String movieDetails = '$movie/{$movieId}';
-
-  static const String discoverTV = '$discover/$tv';
 }
 
 class MDBEndPoint {
-  static const String discoverMovies = MDBPath.discoverMovies;
-  static const String discoverTV = MDBPath.discoverTV;
+  static const String movies = MDBPath.movie;
   static const String movieDetails = MDBPath.movieDetails;
   static const String searchMovies = MDBPath.searchMovies;
 }

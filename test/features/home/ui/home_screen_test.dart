@@ -1,5 +1,6 @@
 import 'package:equifax_movie_db/features/home/ui/home_screen.dart';
 import 'package:equifax_movie_db/models/movie.dart';
+import 'package:equifax_movie_db/util/category_enum.dart';
 import 'package:equifax_movie_db/widgets/movie_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -31,6 +32,7 @@ void main() {
       await tester.pumpApp(const HomeScreen(
         movieList: [mockMovie, mockMovie],
         isLoading: false,
+        selectedCategory: CategoryEnum.popular,
       ));
       expect(find.byType(SliverAppBar), findsOneWidget);
       expect(find.byType(SearchBar), findsOneWidget);
@@ -41,6 +43,7 @@ void main() {
       await tester.pumpApp(const HomeScreen(
         movieList: [mockMovie],
         isLoading: true,
+        selectedCategory: CategoryEnum.popular,
       ));
       expect(find.byType(SliverAppBar), findsOneWidget);
 

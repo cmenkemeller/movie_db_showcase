@@ -14,6 +14,7 @@ class HomePresenter extends StatelessWidget {
           return HomeScreen(
             movieList: state.movieList,
             isLoading: state.isLoading,
+            selectedCategory: state.selectedCategory,
           );
         }),
       ),

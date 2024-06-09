@@ -9,20 +9,21 @@ extension BuildContextExtension on BuildContext {
 class MDBTheme {
   static const Color primaryColor = Color(0xFF4CB9B4);
   static const Color secondaryColor = Color(0xFF3A3F47);
-  static const Color surfaceColor = Color(0xFF232931);
-  static const Color surfaceContainerColor = Color(0xFF232931);
+  static const Color surfaceColor = Color(0xFF242A32);
+  static const Color surfaceContainerColor = Color(0xFF242A32);
   static const Color errorColor = Color(0xFFB00020);
   static const Color onPrimaryColor = Color(0xFFEEEEEE);
   static const Color onSecondaryColor = Color(0xFFEEEEEE);
   static const Color onSurfaceColor = Color(0xFFEBEBEB);
   static const Color onErrorColor = Color(0xFFEBEBEB);
 
+  static const tirtiaryColor = Color(0xFF4FCCA3);
+
   static const radiusM = 16.0;
   static const paddingMargin = 29.0;
 
   static ThemeData get theme {
     return ThemeData(
-      fontFamily: GoogleFonts.poppins().fontFamily,
       textTheme: MDBTextTheme._textTheme,
       colorScheme: const ColorScheme(
         primary: primaryColor,
@@ -71,30 +72,51 @@ class MDBTheme {
         extendedSizeConstraints: const BoxConstraints.tightFor(height: 42),
         extendedPadding: const EdgeInsets.symmetric(horizontal: 17),
       ),
+      chipTheme: ChipThemeData(
+        showCheckmark: false,
+        backgroundColor: secondaryColor,
+        disabledColor: secondaryColor,
+        selectedColor: tirtiaryColor,
+        secondarySelectedColor: tirtiaryColor,
+        labelStyle:
+            MDBTextTheme._textTheme.bodyMedium?.copyWith(color: onSurfaceColor),
+        secondaryLabelStyle:
+            MDBTextTheme._textTheme.labelMedium?.copyWith(color: surfaceColor),
+        labelPadding: const EdgeInsets.symmetric(horizontal: 22, vertical: 2),
+        padding: const EdgeInsets.all(0),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(radiusM),
+        ),
+        side: BorderSide.none,
+      ),
     );
   }
 }
 
 class MDBTextTheme {
-  static final TextTheme _textTheme = GoogleFonts.poppinsTextTheme().copyWith(
-    displayLarge: const TextStyle(
+  static final TextTheme _textTheme = TextTheme(
+    displayLarge: GoogleFonts.poppins(
       fontSize: 36,
       fontWeight: FontWeight.w700,
     ),
-    headlineLarge: const TextStyle(
+    headlineLarge: GoogleFonts.poppins(
       fontSize: 18,
       fontWeight: FontWeight.w600,
     ),
-    bodyLarge: const TextStyle(
+    bodyLarge: GoogleFonts.poppins(
       fontSize: 12,
       fontWeight: FontWeight.w500,
     ),
-    bodyMedium: const TextStyle(
+    bodyMedium: GoogleFonts.poppins(
       fontSize: 12,
       fontWeight: FontWeight.w400,
     ),
-    labelLarge: const TextStyle(
+    labelLarge: GoogleFonts.poppins(
       fontSize: 14,
+      fontWeight: FontWeight.w600,
+    ),
+    labelMedium: GoogleFonts.poppins(
+      fontSize: 12,
       fontWeight: FontWeight.w600,
     ),
   );

@@ -8,5 +8,8 @@
     "overview": "Overview",
     "popularity": "Popularity",
     "voteCount": "Vote Count",
-    "back": "Back"
+    "back": "Back",
+    "topRated": "Top Rated",
+    "popular": "Popular",
+    "categories": "Categories"
 }

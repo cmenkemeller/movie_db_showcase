@@ -1,7 +1,9 @@
 import 'package:equifax_movie_db/core/mdb_theme.dart';
+import 'package:equifax_movie_db/features/home/ui/categories_widget.dart';
 import 'package:equifax_movie_db/features/search/ui/search_screen.dart';
 import 'package:equifax_movie_db/i18n/strings.g.dart';
 import 'package:equifax_movie_db/models/movie.dart';
+import 'package:equifax_movie_db/util/category_enum.dart';
 import 'package:equifax_movie_db/util/widget_extension.dart';
 import 'package:equifax_movie_db/widgets/movie_list_tile.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +12,13 @@ import 'package:skeletonizer/skeletonizer.dart';
 class HomeScreen extends StatelessWidget {
   final List<Movie> movieList;
   final bool isLoading;
-  const HomeScreen({required this.movieList, this.isLoading = true, super.key});
+  final CategoryEnum selectedCategory;
+  const HomeScreen({
+    required this.movieList,
+    required this.selectedCategory,
+    this.isLoading = true,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +47,22 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 22),
           ],
         ).paddingHorizontal(MDBTheme.paddingMargin),
+      ),
+      SliverToBoxAdapter(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              localize.categories,
+              style: context.textTheme.headlineLarge,
+            ).paddingHorizontal(MDBTheme.paddingMargin),
+            const SizedBox(height: 18),
+            CategoriesWidget(
+              selectedCategory: selectedCategory,
+            ),
+            const SizedBox(height: 28),
+          ],
+        ),
       ),
       Skeletonizer.sliver(
         enabled: isLoading,

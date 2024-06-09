@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HomeState {
   bool get isLoading => throw _privateConstructorUsedError;
   List<Movie> get movieList => throw _privateConstructorUsedError;
+  CategoryEnum get selectedCategory => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -29,7 +30,8 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({bool isLoading, List<Movie> movieList});
+  $Res call(
+      {bool isLoading, List<Movie> movieList, CategoryEnum selectedCategory});
 }
 
 /// @nodoc
@@ -47,6 +49,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   $Res call({
     Object? isLoading = null,
     Object? movieList = null,
+    Object? selectedCategory = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -57,6 +60,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.movieList
           : movieList // ignore: cast_nullable_to_non_nullable
               as List<Movie>,
+      selectedCategory: null == selectedCategory
+          ? _value.selectedCategory
+          : selectedCategory // ignore: cast_nullable_to_non_nullable
+              as CategoryEnum,
     ) as $Val);
   }
 }
@@ -69,7 +76,8 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, List<Movie> movieList});
+  $Res call(
+      {bool isLoading, List<Movie> movieList, CategoryEnum selectedCategory});
 }
 
 /// @nodoc
@@ -85,6 +93,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? movieList = null,
+    Object? selectedCategory = null,
   }) {
     return _then(_$HomeStateImpl(
       isLoading: null == isLoading
@@ -95,15 +104,21 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value._movieList
           : movieList // ignore: cast_nullable_to_non_nullable
               as List<Movie>,
+      selectedCategory: null == selectedCategory
+          ? _value.selectedCategory
+          : selectedCategory // ignore: cast_nullable_to_non_nullable
+              as CategoryEnum,
     ));
   }
 }
 
 /// @nodoc
 
-class _$HomeStateImpl implements _HomeState {
+class _$HomeStateImpl with DiagnosticableTreeMixin implements _HomeState {
   const _$HomeStateImpl(
-      {required this.isLoading, final List<Movie> movieList = const []})
+      {required this.isLoading,
+      final List<Movie> movieList = const [],
+      this.selectedCategory = CategoryEnum.topRated})
       : _movieList = movieList;
 
   @override
@@ -118,8 +133,22 @@ class _$HomeStateImpl implements _HomeState {
   }
 
   @override
-  String toString() {
-    return 'HomeState(isLoading: $isLoading, movieList: $movieList)';
+  @JsonKey()
+  final CategoryEnum selectedCategory;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeState(isLoading: $isLoading, movieList: $movieList, selectedCategory: $selectedCategory)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HomeState'))
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('movieList', movieList))
+      ..add(DiagnosticsProperty('selectedCategory', selectedCategory));
   }
 
   @override
@@ -130,12 +159,14 @@ class _$HomeStateImpl implements _HomeState {
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             const DeepCollectionEquality()
-                .equals(other._movieList, _movieList));
+                .equals(other._movieList, _movieList) &&
+            (identical(other.selectedCategory, selectedCategory) ||
+                other.selectedCategory == selectedCategory));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, isLoading, const DeepCollectionEquality().hash(_movieList));
+  int get hashCode => Object.hash(runtimeType, isLoading,
+      const DeepCollectionEquality().hash(_movieList), selectedCategory);
 
   @JsonKey(ignore: true)
   @override
@@ -147,12 +178,15 @@ class _$HomeStateImpl implements _HomeState {
 abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {required final bool isLoading,
-      final List<Movie> movieList}) = _$HomeStateImpl;
+      final List<Movie> movieList,
+      final CategoryEnum selectedCategory}) = _$HomeStateImpl;
 
   @override
   bool get isLoading;
   @override
   List<Movie> get movieList;
+  @override
+  CategoryEnum get selectedCategory;
   @override
   @JsonKey(ignore: true)
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>

@@ -7,7 +7,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   //Change language here-
   LocaleSettings.setLocale(AppLocale.en);
-  
+
   runApp(TranslationProvider(
     child: MovieDatabaseApp(
       cache: MDBCache(),

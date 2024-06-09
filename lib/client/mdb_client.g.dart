@@ -21,7 +21,7 @@ class _MDBClient implements MDBClient {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<MovieList>> discoverMovies() async {
+  Future<HttpResponse<MovieList>> discoverMovies(String type) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -34,7 +34,7 @@ class _MDBClient implements MDBClient {
     )
             .compose(
               _dio.options,
-              'discover/movie',
+              'movie/${type}',
               queryParameters: queryParameters,
               data: _data,
             )

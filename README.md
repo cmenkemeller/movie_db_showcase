@@ -24,6 +24,8 @@ LocaleSettings.setLocal(AppLocale.es);
 3. Error handling. I avoided error handling for the api calls. There are great ways to do it with Dio interceptors but I did not want to take the time to implement for this short project.
 4. Create a proper widget library
 5. Create proper constants for UI (padding, text styles, radii, etc...) and add them to MaterialTheme via Theme Extensions
+6. Google Fonts package does not seem to be handling font weights appropriately. Would take more time to investigate or add fonts directly to project assets.
+7. I realize now that I could have avoided fetching the Movie details from the api and instead just passed the data from the home screen. But I have already implemented GoRouter for routing and it does not support passing custom types.
 
 
 ## Credits

@@ -22,7 +22,6 @@ class MovieDatabaseApp extends StatelessWidget {
     final baseOptions = BaseOptions(queryParameters: {'api_key': _apiKey});
     Dio dio = Dio(baseOptions);
     dio.interceptors.add(PrettyDioLogger());
-
     return MaterialApp.router(
         routerConfig: MDBRouter.router,
         locale: TranslationProvider.of(context).flutterLocale,

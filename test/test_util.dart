@@ -17,7 +17,7 @@ Response mockResponse = Response(requestOptions: RequestOptions());
 
 class MockMDBClient extends Mock implements MDBClient {
   @override
-  Future<HttpResponse<MovieList>> discoverMovies() async {
+  Future<HttpResponse<MovieList>> discoverMovies(String type) async {
     return Future.value(HttpResponse(MovieList(), mockResponse));
   }
 
