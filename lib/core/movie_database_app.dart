@@ -4,6 +4,7 @@ import 'package:equifax_movie_db/client/mdb_client.dart';
 import 'package:equifax_movie_db/core/mdb_cache.dart';
 import 'package:equifax_movie_db/core/mdb_router.dart';
 import 'package:equifax_movie_db/core/mdb_theme.dart';
+import 'package:equifax_movie_db/features/search/cubit/cubit/search_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -19,7 +20,7 @@ class MovieDatabaseApp extends StatelessWidget {
     final baseOptions = BaseOptions(queryParameters: {'api_key': _apiKey});
     Dio dio = Dio(baseOptions);
     dio.interceptors.add(PrettyDioLogger());
-    
+
     return MaterialApp.router(
         routerConfig: MDBRouter.router,
         theme: MDBTheme.theme,
@@ -35,7 +36,11 @@ class MovieDatabaseApp extends StatelessWidget {
                 if (snapshot.hasData && cacheInterceptor != null) {
                   return RepositoryProvider<MDBClient>(
                     create: (context) => MDBClient(dio),
-                    child: child,
+                    child: BlocProvider(
+                      create: (context) => SearchCubit(
+                          client: RepositoryProvider.of<MDBClient>(context)),
+                      child: child,
+                    ),
                   );
                 }
                 return const Center(

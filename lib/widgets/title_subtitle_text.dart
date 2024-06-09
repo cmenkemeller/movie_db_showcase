@@ -25,6 +25,7 @@ class TitleSubtitleText extends StatelessWidget {
           subtitle,
           style: context.textTheme.bodyMedium,
           maxLines: subtitleMaxLines,
+          overflow: TextOverflow.ellipsis,
         ),
       ],
     );

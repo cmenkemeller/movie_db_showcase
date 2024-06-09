@@ -56,24 +56,29 @@ class _MovieListTileState extends State<MovieListTile>
           child: Row(children: [
             PosterImage(posterPath: widget.movie.posterPath ?? ''),
             const SizedBox(width: 8),
-            SlideTransition(
-              position: _slideAnimation,
-              child: FadeTransition(
-                opacity: _opacityAnimation,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TitleSubtitleText(
-                        title: 'Title:', subtitle: widget.movie.title),
-                    if (widget.movie.releaseDate != null)
+            Expanded(
+              child: SlideTransition(
+                position: _slideAnimation,
+                child: FadeTransition(
+                  opacity: _opacityAnimation,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
                       TitleSubtitleText(
-                          title: 'Release Date:',
-                          subtitle: widget.movie.releaseDate ?? ''),
-                    TitleSubtitleText(
-                        title: 'Average Rating:',
-                        subtitle: widget.movie.voteAverage.toString()),
-                  ],
+                        title: 'Title:',
+                        subtitle: widget.movie.title,
+                        subtitleMaxLines: 1,
+                      ),
+                      if (widget.movie.releaseDate != null)
+                        TitleSubtitleText(
+                            title: 'Release Date:',
+                            subtitle: widget.movie.releaseDate ?? ''),
+                      TitleSubtitleText(
+                          title: 'Average Rating:',
+                          subtitle: widget.movie.voteAverage.toString()),
+                    ],
+                  ),
                 ),
               ),
             ),

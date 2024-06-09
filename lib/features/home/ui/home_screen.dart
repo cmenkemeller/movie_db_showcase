@@ -1,4 +1,5 @@
 import 'package:equifax_movie_db/core/mdb_theme.dart';
+import 'package:equifax_movie_db/features/search/ui/search_screen.dart';
 import 'package:equifax_movie_db/models/movie.dart';
 import 'package:equifax_movie_db/util/widget_extension.dart';
 import 'package:equifax_movie_db/widgets/movie_list_tile.dart';
@@ -33,27 +34,7 @@ class HomeScreen extends StatelessWidget {
               style: context.textTheme.headlineLarge,
             ),
             const SizedBox(height: 18),
-            Row(
-              children: [
-                Expanded(
-                  child: SearchAnchor(
-                    builder: (context, controller) => const SearchBar(
-                      hintText: 'Search Here ...',
-                      constraints: BoxConstraints(maxHeight: 42, minHeight: 42),
-                    ),
-                    suggestionsBuilder:
-                        (BuildContext context, SearchController controller) {
-                      return List.generate(5, (index) => const SizedBox());
-                    },
-                  ),
-                ),
-                const SizedBox(width: 16),
-                IconButton(
-                  icon: const Icon(Icons.search),
-                  onPressed: () {},
-                ),
-              ],
-            ),
+            const SearchWidget(),
             const SizedBox(height: 22),
           ],
         ).paddingHorizontal(MDBTheme.paddingMargin),
