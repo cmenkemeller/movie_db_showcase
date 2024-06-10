@@ -9,6 +9,7 @@ import 'package:equifax_movie_db/i18n/strings.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class MovieDatabaseApp extends StatelessWidget {
@@ -36,6 +37,7 @@ class MovieDatabaseApp extends StatelessWidget {
 
                 if (cacheInterceptor != null) {
                   dio.interceptors.add(cacheInterceptor);
+                  FlutterNativeSplash.remove();
                 }
                 if (snapshot.hasData && cacheInterceptor != null) {
                   return RepositoryProvider<MDBClient>(
