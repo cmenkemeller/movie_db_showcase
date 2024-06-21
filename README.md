@@ -1,5 +1,7 @@
 # Equifax Movie DB
 
+This project serves as a showcase for how Cardin Menkemeller (as of 2024-06-21 at least) creates a quick Flutter project. This project was created in ~8 hours and can always be improved. In fact, I have included a series of improvement suggestion below. Enjoy!
+
 ## Running instructions
 1. Create file 'api-keys.json' in project root
 - Add following code with your own API key
@@ -25,11 +27,6 @@ LocaleSettings.setLocal(AppLocale.es);
 4. Create a proper widget library
 5. Create proper constants for UI (padding, text styles, radii, etc...) and add them to MaterialTheme via Theme Extensions
 6. Google Fonts package does not seem to be handling font weights appropriately. Would take more time to investigate or add fonts directly to project assets.
-7. ~~I realize now that I could have avoided fetching the Movie details from the api and instead just passed the data from the home screen. But I have already implemented GoRouter for routing and it does not support passing custom types.~~ I'm reverting to classic Flutter navigation so that I can get the poster animation between the home screen and the details screen.
-
-
-## Credits
-This project was created from scratch by Cardin Menkemeller.
 
 ## Problem
 You want to have an application that allows:
